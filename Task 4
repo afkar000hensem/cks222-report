@@ -1,0 +1,25 @@
+Project context: The project audited in this task is the Hotel Review System, a group project from a university course on object-oriented programming (OOP). The aim was to build a program that brings hotel reviews and traveller information together in one place. Users can read the reviews of a hotel, view and update traveller profiles, rank hotels by rating and see who writes the most reviews. The requirements also named specific OOP features that had to be included, such as inheritance and a friend function. The work was divided among group members and had to be finished by a fixed deadline. The wastes below describe what slowed the project down.
+
+1.	Waits & Handsoff
+
+Case-specific: The classes were split among group members, and several of them depended on one another. The traveler class inherits from the base user class, so it could not be finished before that base class was in place. The hotel class holds an array of review objects, so it also had to wait for the review class. Until the earlier class was ready, the dependent work stayed blocked.
+Impact: Members who depended on unfinished classes were left idle or had to code against incomplete work. Since the code kept changing as classes were completed, the UML diagram, class descriptions and test cases had to be revised more than once.
+Remedy The interface of each class (its data and operations) should be agreed before coding starts, so dependent classes can be written in parallel. Documentation should begin only after a code freeze, to avoid redoing the diagram and descriptions. Continuous integration with automatic build checks would also reveal mismatches between members' code early.
+
+2.	Overproduction
+
+Case-specific: The requirements specification called for a friend function, so a hotel analytics report was added. Its first version printed almost the same output as the existing feature that lists a hotel's reviews, which meant two features showed the same information. The report was later redesigned to show statistics only (average, highest and lowest rating, and the percentage of excellent reviews). Even then, it reads just two private members directly, the hotel name and the review count, and both have public getters. An ordinary function could have produced the same report, so the friend access did little beyond meeting the specification.
+Impact: Time went into coding, testing and redesigning a feature whose special access was not really needed.
+Remedy: The requirements specification should be analysed before coding. Given-When-Then acceptance criteria should then be written for each feature so that every feature has a distinct output. Test-first programming supports this because a test cannot be written until the expected output is clear. It should also be decided early which data truly needs private access. This gives the friend function a real purpose.
+
+3.	Defects & Reworks
+
+Case-specific: Early versions of the Hotel Review System had defects that were found only after the code was shared and reviewed. The main menu failed to compile because a closing brace was missing. The hotel comparison feature used a helper before it was defined. The menu showed a report option that had no matching handler. The class diagram had a misspelled attribute and a wrongly drawn relationship between two classes, and went through many versions. A later check against the requirements specification also showed that updated traveler details and new reviews were lost on exit, because writing data back to the files had been left out.
+Impact: Every defect meant another round of fixing and resubmitting, which delayed other parts. The class diagram went through many versions, and the file write-back had to be added late, after most features were finished. Time that could have gone to new features was spent redoing existing work.
+Remedy: Continuous integration should compile the program and run it with sample users and reviews files on every push, so errors like a missing brace or a helper used too early surface within minutes. Test-first programming would add a test for each menu feature, including one that closes and restarts the program to confirm that saved data is still there. That test would have caught the missing write-back. Pair programming, with a second member checking the code and diagram as they are written, would help catch slips such as the misspelled attribute.
+
+4.	Waste 4
+
+Case-specific: 
+Impact: 
+Remedy: 
