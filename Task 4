@@ -1,6 +1,5 @@
 Project context: The project audited in this task is the Hotel Review System, a group project from a university course on object-oriented programming (OOP). The aim was to build a program that brings hotel reviews and traveller information together in one place.
 Users can read the reviews of a hotel, view and update traveller profiles, rank hotels by rating and see who writes the most reviews. The requirements also named specific OOP features that had to be included, such as inheritance and a friend function.
-The work was divided among group members and had to be finished by a fixed deadline.
 
 1. Lean Waste Audit & Remedies
 
