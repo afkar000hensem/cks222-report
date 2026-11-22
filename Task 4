@@ -1,62 +1,52 @@
-Project context: The project audited in this task is the Hotel Review System, a group project from a university course on object-oriented programming (OOP). The aim was to build a program that brings hotel reviews and traveller information together in one place.
-Users can read the reviews of a hotel, view and update traveller profiles, rank hotels by rating and see who writes the most reviews. The requirements also named specific OOP features that had to be included, such as inheritance and a friend function.
+4.1 Lean Waste Audit and Remedies
 
-1. Lean Waste Audit & Remedies
-
-i) Waits & Handsoff
-
-Case-specific:
-The classes were split among group members, and several of them depended on one another. The traveler class inherits from the base user class, so it could not be finished before that base class was in place.
-The hotel class holds an array of review objects, so it also had to wait for the review class. Until the earlier class was ready, the dependent work stayed blocked.
+1. Waiting
+Case-Specific Example:
+The group leader informed the members that specific tasks could not be assigned yet because the UML diagram needed to be completed first. At that time, members were only asked to prepare coding and example outputs. Further task distribution took place on the other day when members discussed how to divide the coding tasks, including the classes assigned to each member.
 
 Impact:
-Members who depended on unfinished classes were left idle or had to code against incomplete work.
-Since the code kept changing as classes were completed, the UML diagram, class descriptions and test cases had to be revised more than once.
+- Some members did not receive clear task assignments until the initial design was ready.
+- This reduced the opportunity for members to work on their assigned tasks simultaneously from the beginning.
+- Delayed task distribution could also affect the time available for completing and reviewing the project.
 
 Remedy:
-The interface of each class (its data and operations) should be agreed before coding starts, so dependent classes can be written in parallel.
-Documentation should begin only after a code freeze, to avoid redoing the diagram and descriptions.
-Continuous integration with automatic build checks would also reveal mismatches between members' code early.
+The group should prepare an initial task distribution during the early planning stage. Tasks that do not depend on the completed UML diagram can be assigned earlier. The group leader can also provide temporary task assignments and update them when the design is finalised. This allows members to begin their work without waiting for every part of the design to be completed.
 
 
-ii) Overproduction
-
-Case-specific:
-The requirements specification called for a friend function, so a hotel analytics report was added. Its first version printed almost the same output as the existing feature that lists a hotel's reviews, which meant two features showed the same information.
-The report was later redesigned to show statistics only (average, highest and lowest rating, and the percentage of excellent reviews). Even then, it reads just two private members directly, the hotel name and the review count, and both have public getters.
-An ordinary function could have produced the same report, so the friend access did little beyond meeting the specification.
+2. Handoffs
+Case-Specific Example:
+A group member shared their completed coding with the group. However, the group leader later informed the member that the shared code had to be modified because the original file could not be opened. As a result, the recipient had to make changes to an accessible version of the code before continuing with the project.
 
 Impact:
-Time went into coding, testing and redesigning a feature whose special access was not really needed.
+- Additional time was needed to access and modify the shared code.
+- The group needed extra communication to ensure that everyone was working with the correct version.
+- Changes made during the handoff could create confusion if members were not informed about the latest updates.
 
 Remedy:
-The requirements specification should be analysed before coding. Given-When-Then acceptance criteria should then be written for each feature so that every feature has a distinct output.
-Test-first programming supports this because a test cannot be written until the expected output is clear. It should also be decided early which data truly needs private access. This gives the friend function a real purpose.
+The group should use one shared project folder that all members can access. Before handing over completed code, members should check that the files can be opened and used by others. Any changes to the code should also be communicated clearly so that members can work with the latest version.
 
 
-iii) Defects & Reworks
-
-Case-specific:
-Early versions of the Hotel Review System had defects that were found only after the code was shared and reviewed. The main menu failed to compile because a closing brace was missing.
-The hotel comparison feature used a helper before it was defined. The menu showed a report option that had no matching handler. The class diagram had a misspelled attribute and a wrongly drawn relationship between two classes, and went through many versions.
-A later check against the requirements specification also showed that updated traveler details and new reviews were lost on exit, because writing data back to the files had been left out.
+3. Defects
+Case-Specific Example:
+The group leader identified inconsistencies between the project documentation and the actual implementation. The Process Identification and Requirement Specification sections needed changes because some of their descriptions did not match the implemented code. The Class Definition section was also identified as potentially inconsistent. These issues were later reviewed and corrected by a group member.
 
 Impact:
-Every defect meant another round of fixing and resubmitting, which delayed other parts. The class diagram went through many versions, and the file write-back had to be added late, after most features were finished. Time that could have gone to new features was spent redoing existing work.
+- Additional time was required to review and correct the documentation.
+- Inconsistencies could make it difficult for readers to understand how the system actually works.
+- The final report might not accurately represent the completed system if these issues were not corrected.
 
 Remedy:
-Continuous integration should compile the program and run it with sample users and reviews files on every push, so errors like a missing brace or a helper used too early surface within minutes. Test-first programming would add a test for each menu feature,
-including one that closes and restarts the program to confirm that saved data is still there. That test would have caught the missing write-back. Pair programming, with a second member checking the code and diagram as they are written, would help catch slips such as the misspelled attribute.
+The group should review the documentation alongside the actual code throughout development instead of waiting until the end. When a feature or class is changed, the related documentation should also be updated. Before submission, the group should perform a final consistency check to ensure that the descriptions match the implemented system.
 
 
-iv) Extra Processing
+4. Overproduction
+Case-Specific Example:
+The group leader noticed that the Property Deep-Dive and Generate Hotel Report features initially displayed almost the same information. Both features showed the hotel name, total number of reviews and average rating. This meant that the two features provided very similar information to users. The Generate Hotel Report feature was later improved to include additional statistics, such as the highest and lowest ratings and the percentage of excellent reviews.
 
-Case-specific: 
-The hotel ranking feature copies the hotel list into a new array and sorts it again every time the ranking table is shown, even if no new review was added. Computing hotel statistics also runs separate loops over the review list for the average, highest, lowest, and excellent review count.
-In addition, finding top reviewers scans all reviews repeatedly for every traveler before sorting the list.
+Impact:
+- Time was initially spent developing two features that provided almost identical information.
+- Repeated information offered limited additional value to users.
+- The team needed to make further changes to give the report a clearer purpose.
 
-Impact: 
-Extra sorting, copying, and repeated scans add unnecessary steps and increase the chance of logic or boundary mistakes as the data grows.
-
-Remedy: 
-The ranking list should only be sorted when ratings or review counts actually change, and statistics can be gathered in fewer passes over the data. Simple tests on edge cases, such as empty lists or tied scores, would also help keep the logic clean and reliable.
+Remedy:
+Before developing a new feature, the group should compare its intended output with the existing features. Each feature should have a clear and different purpose. For example, Property Deep-Dive can focus on presenting general hotel information and reviews, while Generate Hotel Report can provide additional statistics and an overall analysis. This helps prevent unnecessary duplication and ensures that each feature provides useful information to users.
