@@ -50,8 +50,14 @@ Continuous integration should compile the program and run it with sample users a
 including one that closes and restarts the program to confirm that saved data is still there. That test would have caught the missing write-back. Pair programming, with a second member checking the code and diagram as they are written, would help catch slips such as the misspelled attribute.
 
 
-iv) Waste 4
+iv) Extra Processing
 
 Case-specific: 
+The hotel ranking feature copies the hotel list into a new array and sorts it again every time the ranking table is shown, even if no new review was added. Computing hotel statistics also runs separate loops over the review list for the average, highest, lowest, and excellent review count.
+In addition, finding top reviewers scans all reviews repeatedly for every traveler before sorting the list.
+
 Impact: 
+Extra sorting, copying, and repeated scans add unnecessary steps and increase the chance of logic or boundary mistakes as the data grows.
+
 Remedy: 
+The ranking list should only be sorted when ratings or review counts actually change, and statistics can be gathered in fewer passes over the data. Simple tests on edge cases, such as empty lists or tied scores, would also help keep the logic clean and reliable.
