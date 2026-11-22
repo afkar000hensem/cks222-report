@@ -1,0 +1,16 @@
+In a banking app system like MAE produced by Maybank, one of the core features required are money transfers between users or interbank transfers. Therefore, it is
+important that a transaction requires heavy security to prevent data theft or the user's money being stolen. To resolve this issue, Maybank employs a system called
+secure2u as a way to mend these problems, one of which is to bind every transaction onto one registered device set by the user, so that any unauthorized transactions
+made on an unregistered device is immediately rejected and is notified to the user.
+
+These features require a complex software system process, in which critical operational failures will lead to major loss of profits or mass stolen data theft by
+unathorized third parties. One of the identified critical failures is when the system accidentally transfers RM 5,000.00 instead of RM 500.00 set by the user, in
+which it will cause an issue where the user experiences a huge profit loss.
+
+Therefore, a revised Software Process Model is needed to minimize the amount of errors that may occur within the development team, in which the processes, flow,
+responsibilities and resources used are specified, defined and standardised so that every member of the project know their roles, responsibilities and guide on how
+should the standard operating procedure be executed for each processes.
+
+In this case, we will use the Objective Management Group (OMG) Software & Systems Process Engineering Metamodel (SPEM) 2.0 Version where every role, task and work
+products are highly defined and specified. Each role, task, and work products are then used by the Method Content to define a step-by-step explanations that describes
+how specific development goals are achieved by which roles with which resources.
