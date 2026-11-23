@@ -14,3 +14,14 @@ should the standard operating procedure be executed for each processes.
 In this case, we will use the Objective Management Group (OMG) Software & Systems Process Engineering Metamodel (SPEM) 2.0 Version where every role, task and work
 products are highly defined and specified. Each role, task, and work products are then used by the Method Content to define a step-by-step explanations that describes
 how specific development goals are achieved by which roles with which resources.
+
+To start, let us define what is a Role in SPEM 2.0 Version. A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
+For example, someone is assigned as a Tester or a Software Architect.
+
+Then, we have the Task in which it is a work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly. One example is Tester
+performs test, where Performs Test is the Task.
+
+Lastly, we have the Work Product where documents or artefacts are either produced or consumed by Roles performing Tasks. In other words, it is essentially the reports,
+codes, documents, diagrams and such being produced or used to complete a task or perform a task.
+
+We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database with active Notion share link.
