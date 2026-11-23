@@ -9,7 +9,7 @@ Agile User Stories
 | Independent | Partly, the story needs device registration to be built first but the approval requirements and constraints are independent of the implementation of device registration. |
 | Negotiable | Yes, the story gives the developers flexibility on how to let the user approve their payment. |
 | Valuable | Yes, the story prevents scammers from approving online payments by only allowing customers' registered device to approve them. |
-| Estimable | Yes, the work can be estimateed based on the approval rule. However, it is unknown how each device indentified so this is treated as an assumption. |
+| Estimable | Yes, the work can be estimateed based on the approval rule and push notification system on target operating systems. However, it is unknown how each device indentified so this is treated as an assumption. |
 | Small | Yes, the story is only for the approval of the payment from a registered device and does not include device registration. | 
 | Testable | Yes, the feature can be tested by two scenarios: <br> 1. Triggering a payment and then approving a payment from a registered device and the payment goes through <br> 2. Triggering a payment and not approving it (since scmmaer does not have the registered device to approve it) and the payment gets cancelled |
 
@@ -17,11 +17,47 @@ Agile User Stories
 
 | attributes\story | Story 2 |
 |---|---|
-| Independent | Partly, this is would be an optional method of approving online payment from Story 1, so device registration and Story 1 must be done first. |
+| Independent | Partly, this is would be an optional method of approving online payment from Story 1, so device registration and Story 1 must be done first. | //change to yes, by the time a use asks for this features, secure2u wouldve already been built or something like dat
 | Negotiable | Yes, this story gives the developer flexibility on how to let user approve their online payment as long as it does not require MAE app PIN.  |
 | Valuable | Yes, the feature provides privacy to customers when approving an online payment in public. |
 | Estimable | Yes, the feature is straightforward enough to be estimated as the app only requests biometric authentication from the device. What is not known from the story is how many failed attempt is provide before it triggers PIN fallback  |
 | Small | Yes, this feature is simple because it only request its own biometric authentication from the operating system so the authentication happens on the device itself rather than on Maybank's server  | 
 | Testable | Yes, the feature can be tested by three scenarios: <br> 1. Approval is done with the alternative method without using PIN. <br> 2. Approval with alternatife method fails and would require PIN to be typed in. <br> 3. Approval requires PIN to be typed in because alternative method is not set up. |
+
+Given When Then
+
+Story 1
+
+Positive
+Given the customer triggers an online payment on their account
+When the customer approve the online payment on their registered device
+Then the online payment goes through
+
+Negative
+Given someone triggers an online payment on the customer account
+When customer rejects the online payment approval
+Then the online payment is cancelled
+
+Boundary
+Given the customer triggers an  online payment on their account
+When the customer fail to approve the online payment in 50 seconds on their registered device
+Then the approval request times out and the online payment is automatically cancelled
+
+Story 2
+
+Positive
+Given the customer is approving an online payment using the biometric authentication
+When the customer pass the biometric authentication
+Then the online payment is approved
+
+Negative 
+Given the customer is approving an online payment using the biometric authentication
+When the customer fail the biometric authentication 3 times.
+Then biometric authentication will stop and Secure2u will fall back to PIN authentication.
+
+Boundary
+Given the customer's Secure2u registered device does not have biometric authentication set up
+When the customer try to approve the online payment
+Then Secure2u will only offer PIN authentication 
 
 
