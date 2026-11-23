@@ -26,7 +26,7 @@ Remedy:
 The group should use one shared project folder that all members can access. Before handing over completed code, members should check that the files can be opened and used by others. Any changes to the code should also be communicated clearly so that members can work with the latest version.
 
 
-3. Defects
+3. Reworks & Defects
 Case-Specific Example:
 The group leader identified inconsistencies between the project documentation and the actual implementation. The Process Identification and Requirement Specification sections needed changes because some of their descriptions did not match the implemented code. The Class Definition section was also identified as potentially inconsistent. These issues were later reviewed and corrected by a group member.
 
