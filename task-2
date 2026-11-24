@@ -34,24 +34,27 @@ When the customer approve the online payment on their registered device
 Then the online payment goes through
 
 Negative
-Given someone triggers an online payment on the customer account
+Given someone triggers an online payment using the customer's bank details
 When customer rejects the online payment approval
 Then the online payment is cancelled
 
 Boundary
 Given the customer triggers an  online payment on their account
-When the customer fail to approve the online payment in 50 seconds on their registered device
+When the customer fail to approve the online payment in 50 seconds on their registered device (50 second refer secure2u faq maybank)
 Then the approval request times out and the online payment is automatically cancelled
+
+
 
 Story 2
 
 Positive
-Given the customer is approving an online payment using the biometric authentication
+Given the customer is approving an online payment using the biometric authentication with biometric authentication set up
 When the customer pass the biometric authentication
 Then the online payment is approved
 
 Negative 
-Given the customer is approving an online payment using the biometric authentication
+Given the customer is approving an online payment using the biometric authentication with biometric authentication set up
+When the customer pass the biometric authentication
 When the customer fail the biometric authentication 3 times.
 Then biometric authentication will stop and Secure2u will fall back to PIN authentication.
 
@@ -60,4 +63,25 @@ Given the customer's Secure2u registered device does not have biometric authenti
 When the customer try to approve the online payment
 Then Secure2u will only offer PIN authentication 
 
+50 second timeout source https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/frequent_queries/secure2u_tac/how-to-authorise-transactions.page
 
+Definition of Done
+
+A story is done only when all three parts below are met.
+
+1. Core acceptance criteria
+- [ ] Story 1: Scenarios 1.1 to 1.3 are fully satisfied (approval from the registered device goes through, a rejected payment is cancelled, an unanswered request times out and is cancelled)
+- [ ] Story 2: Scenarios 2.1 to 2.3 are fully satisfied (biometric approval works with no PIN typed, the PIN fallback appears after failed attempts, only the PIN is offered when no biometric is set up)
+
+2. Process compliance guidelines (all stories)
+
+- [ ] The code has been refactored
+- [ ] The code has been peer reviewed, and the review report is recorded
+- [ ] Zero static analysis warnings remain
+
+3. Absolute integration verification (all stories)
+
+- [ ] The code is integrated into the main branch with a passing build
+- [ ] Unit tests pass
+- [ ] User acceptance testing (UAT) is complete
+- [ ] The story is ready for deployment
