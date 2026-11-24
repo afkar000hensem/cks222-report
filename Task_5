@@ -5,7 +5,7 @@ Project in context: Maybank Secure2u
 Secure2u is the safer and quick way to approve your Maybank2u and MAE transactions, using Secure Verification (one-tap approval).
 This feature is available on the MAE app. Once you have activated Secure2u, it will be the default method to approve ALL transactions.
 
-Münch's 4 Ps can be apply to prevent heavyweight process overhead from scuttling project success.
+Münch's 4 Ps can be applied to prevent heavyweight process overhead from scuttling project success.
 a) Problem (Complexity, novelty, volatility of constraints)
 
 High Complexity & Novelty: 
@@ -16,7 +16,7 @@ High Constraint Volatility:
 Rapidly evolving malware/APK scam vectors and strict, shifting anti-fraud mandates from Bank Negara Malaysia (BNM)—such as mandatory 12-hour 
 cooling-off periods and ATM activation checks—requiring an adaptive process that handles sudden regulatory and security updates.
 
-2. Project (Team size, distribution, budget, schedule)
+b) Project (Team size, distribution, budget, schedule)
 
 Large, Distributed Teams: 
 Requires coordinated development across multiple specialized squads (MAE mobile app teams, core banking backend, 
@@ -26,7 +26,7 @@ Strict Schedules & Enterprise Budget:
 Backed by substantial enterprise banking capital, but constrained by hard regulatory compliance deadlines from BNM (e.g., phased phase-out of SMS OTPs) 
 and high coordination overhead across distributed engineering and QA units.
 
-3. People (Skill levels, team cohesion, culture, turnover)
+c) People (Skill levels, team cohesion, culture, turnover)
 
 Specialized Skill Sets: 
 Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering/Malware Shielding), 
@@ -36,7 +36,7 @@ Cross-Team Cohesion & Culture:
 Bridging traditional core-banking Waterfall/governance culture with agile mobile product teams; 
 standardized documentation and security handoffs are essential to mitigate knowledge loss from enterprise staff turnover.
 
-4. Product (Criticality, reliability, lifespan, security needs)
+d) Product (Criticality, reliability, lifespan, security needs)
 Mission-Critical & High Reliability: 
 Handles millions of daily financial authorizations where downtime directly blocks national commerce; 
 requires near-zero downtime (99.99%+ availability) and strict failover mechanisms (e.g., offline Secure TAC fallback when push notifications fail).
@@ -58,6 +58,7 @@ Project (Team Size & Distribution): Developing Secure2u spans separate MAE mobil
 People (Turnover & Compliance Culture): In a large enterprise bank, relying on tacit knowledge rather than formal architectural specifications creates severe operational risk if key security or backend engineers leave.  
 
 2. Why Rigid, Linear Waterfall Fails
+
 A purely sequential, heavyweight Waterfall model (freezing all requirements upfront, multi-month phase gates before any code ships) is equally unviable:
 Problem (Volatility of Constraints): Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti-scam directive would stall in months of change-control bureaucracy while customers remain vulnerable.   
 Problem (Novelty) & Product (User Friction): Features like the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle to gather user feedback would result in unusable UX or high transaction drop-off rates.  
@@ -75,7 +76,7 @@ How It Works for Secure2u:
   Product (Criticality & reliability): 
     Built-in architectural runways and formal release gates ensure no feature reaches production without passing penetration testing and compliance sign-offs.   
 
-2. Disciplined Agile (DA) — Regulated / Continuous Delivery LifecycleDisciplined 
+2. Disciplined Agile (DA) 
 Agile is a goal-driven, hybrid process toolkit designed specifically to tailor practices based on team context, risk, and regulatory constraints rather than forcing a single rigid methodology.
 How It Works for Secure2u:
 Prescriptive Layer (Inception & Transition Phases): Enforces formal upfront Architectural Modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (e.g., rolling out a new Secure2u device-binding rule to 5% of users before full release).
@@ -94,22 +95,27 @@ lone decision, do not be rude and help each other if someone is lagging behind.
 2. Storming
 
 This phase is characterised by every team member including the leader giving their opinion as to how to approach the assignment and debating each other over
-how to proceed. Every team also start mentioning each other in our whatsapp group to ensure that everyone is involved in doing the work without possibility 
-of a free rider.
+how to proceed. For example, we debated over whose company and usm project should be audited. Every team member also take responsibility in 
+mentioning each other in our whatsapp group to ensure that everyone is involved in doing the work without possibility of a free rider.
 
 3. Norming
 
-After a week of casual conversation about the assignment. Cooperation improved until eventually any disagreement was solved by comparing each interpretation to the assignment 
-instruction and picking the approach with the closest accuracy and become the consensus among team members. During this parts, roles were assigned to each other by each member selecting from a 
-pole through first come first serve method.
+After a week of casual conversation about the assignment. Cooperation improved until eventually any disagreement was solved by comparing each interpretation 
+to the assignment instruction and picking the approach with the closest accuracy and become the consensus among team members. During this parts, roles were 
+assigned to each other by each member selecting from a poll on a first-come, first-served basis. Doing this reduces conflict about who is assigned to what
+task.
 
 4.Performing
+
 In the last 2 week before submitting this assignment the team become one cohesive unit with a flexible work designation where each member is encourage to
-supervise each others work and give comment on improvement as well as providing constructive criticism. The assignment was being develop slowly but smoothly
+supervise each others work and give comment on improvement as well as providing constructive criticism. Peer review, constructive feedback, and flexible task 
+sharing is improtant in reducing error gaps, noticing small mistake and allow for a quicker fix. The assignment was being develop slowly but smoothly
 with little roadblock until the work is finish.
 
 
 How we managed conflict during our process engineering tasks.
-We managed conflict during our process engineering tasks by having a team wide discussion about the conflict, resolving it by providing evidence for each
-perspective and making sure one voices does not overshadow anybody. Until the strongest evidence and all voices have been considered, the final decision is
-made by picking the majority agreement.
+
+When conflicts appear, we would held a team-wide discussions where each member backed their view with evidence from the assignment instruction. 
+We made sure quieter members were heard and no single voice dominated the discussion. Once all perspectives and supporting evidence were considered, 
+we reached the final decisions through majority agreement while making sure to check for remaining concerns so potential gaps were
+addressed before moving forward.
