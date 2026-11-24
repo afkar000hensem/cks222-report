@@ -49,41 +49,42 @@ Tailoring the development process for Maybank Secure2u around Münch's 4 Ps (Pro
 extreme safety and regulatory accountability on one side, and rapidly evolving fraud threats on the other. 
 Choosing either extreme—pure ad-hoc Agile or rigid, linear Waterfall—would cause project failure.
 
-1. Why Pure Ad-Hoc Agile Fails
+2. Why Extreme Process Models Fail for Secure2u
+
+- Why Pure Ad-Hoc Agile Fails
 
 Pure, unbridled Agile (minimal documentation, informal handoffs, rapid continuous deployment without heavy gates) is incompatible with Secure2u's context:
-
 Product (Criticality & Security Needs): Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, cryptographic verification, and mandatory penetration testing, exposing customers to catastrophic financial loss and Bank Negara Malaysia (BNM) penalties.   
 Project (Team Size & Distribution): Developing Secure2u spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.   
 People (Turnover & Compliance Culture): In a large enterprise bank, relying on tacit knowledge rather than formal architectural specifications creates severe operational risk if key security or backend engineers leave.  
 
-2. Why Rigid, Linear Waterfall Fails
+- Why Rigid, Linear Waterfall Fails
 
-A purely sequential, heavyweight Waterfall model (freezing all requirements upfront, multi-month phase gates before any code ships) is equally unviable:
+A purely sequential, heavyweight Waterfall model (freezing all requirements upfront, multi-month phase gates before any code ships) is also not viable:
 Problem (Volatility of Constraints): Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti-scam directive would stall in months of change-control bureaucracy while customers remain vulnerable.   
 Problem (Novelty) & Product (User Friction): Features like the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle to gather user feedback would result in unusable UX or high transaction drop-off rates.  
 People (Cross-Team Culture): Forcing fast-moving mobile app squads (iOS/Android) into a slow mainframe release cadence stalls UI improvements and bug fixes that do not touch core cryptographic infrastructure.
 
 1. Scaled Agile Framework (SAFe) with Stage-Gate Governance
 SAFe combines enterprise-level planning and hard milestone synchronization (prescriptive) with decentralized, sprint-based team execution (agile).
-How It Works for Secure2u:
-  Prescriptive Layer (Program & Portfolio Level): 
-    Uses Program Increment (PI) Planning every 8–12 weeks and formal Compliance/Security Stage-Gates to align hard regulatory deadlines (e.g., Bank Negara Malaysia directives) across all dependent teams—MAE mobile squads, core banking ledger engineers, FPX gateways, and ATM firmware vendors.
+SAFe for Secure2u:
+-Prescriptive Layer (Program & Portfolio Level): 
+--Uses Program Increment (PI) Planning every 8–12 weeks and formal Compliance/Security Stage-Gates to align hard regulatory deadlines (e.g., Bank Negara Malaysia directives) across all dependent teams—MAE mobile squads, core banking ledger engineers, FPX gateways, and ATM firmware vendors.
 
-  Agile Layer (Team Level): 
-    Individual feature squads execute in 2-week Scrum/Kanban sprints to build UI flows, push notification handlers, and anti-malware detection updates once API contracts are locked.Alignment with Münch's 4 Ps:   Project (Team size, distribution, schedule): Directly solves multi-team coordination across large, distributed banking departments while enforcing fixed regulatory delivery dates.   
+-Agile Layer (Team Level): 
+--Individual feature squads execute in 2-week Scrum/Kanban sprints to build UI flows, push notification handlers, and anti-malware detection updates once API contracts are locked.Alignment with Münch's 4 Ps:   Project (Team size, distribution, schedule): Directly solves multi-team coordination across large, distributed banking departments while enforcing fixed regulatory delivery dates.   
 
-  Product (Criticality & reliability): 
-    Built-in architectural runways and formal release gates ensure no feature reaches production without passing penetration testing and compliance sign-offs.   
+-Product (Criticality & reliability): 
+--Built-in architectural runways and formal release gates ensure no feature reaches production without passing penetration testing and compliance sign-offs.   
 
 2. Disciplined Agile (DA) 
 Agile is a goal-driven, hybrid process toolkit designed specifically to tailor practices based on team context, risk, and regulatory constraints rather than forcing a single rigid methodology.
-How It Works for Secure2u:
-Prescriptive Layer (Inception & Transition Phases): Enforces formal upfront Architectural Modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (e.g., rolling out a new Secure2u device-binding rule to 5% of users before full release).
-Agile Layer (Construction Phase): Allows teams to tailor their day-to-day workflow—using iterative sprints for fast-changing mobile UX and Malware Shielding rules, while applying stricter verification loops for core cryptographic modules.
-Alignment with Münch's 4 Ps:   
-  Problem (Complexity & volatility of constraints): Adapts smoothly to evolving scam vectors and BNM policy changes without tearing down core security architecture.   
-  People (Skill levels, culture, turnover): Balances governance artifacts (protecting against enterprise staff turnover) with embedded security specialists, avoiding the "danger of over-formalization" on low-risk UI tasks.
+DA for Secure2u:
+-Prescriptive Layer (Inception & Transition Phases): Enforces formal upfront Architectural Modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (e.g., rolling out a new Secure2u device-binding rule to 5% of users before full release).
+-Agile Layer (Construction Phase): Allows teams to tailor their day-to-day workflow—using iterative sprints for fast-changing mobile UX and Malware Shielding rules, while applying stricter verification loops for core cryptographic modules.
+-Alignment with Münch's 4 Ps:   
+--Problem (Complexity & volatility of constraints): Adapts smoothly to evolving scam vectors and BNM policy changes without tearing down core security architecture.   
+--People (Skill levels, culture, turnover): Balances governance artifacts (protecting against enterprise staff turnover) with embedded security specialists, avoiding the "danger of over-formalization" on low-risk UI tasks.
 
 (Tuckman's Team Dynamics & Fist-of-Five Governance)
 1. Forming
