@@ -1,6 +1,9 @@
+Assignment Context
+The assignment being audited is the Hotel Review System, which was developed as a group assignment for Object-Oriented Programming (CKC112). The aim was to develop a program that brings hotel reviews and traveller information together in one place. The program allows users to read hotel reviews, view and update traveller profiles, rank hotels based on their ratings, and identify travellers who write the most reviews. The assignment also required the implementation of specific OOP concepts, including inheritance and friend functions.
+
 4.1 Lean Waste Audit and Remedies
 
-1. Waiting
+1. Waiting & Handsoff
 Case-Specific Example:
 The group leader informed the members that specific tasks could not be assigned yet because the UML diagram needed to be completed first. At that time, members were only asked to prepare coding and example outputs. Further task distribution took place on the other day when members discussed how to divide the coding tasks, including the classes assigned to each member.
 
@@ -13,7 +16,7 @@ Remedy:
 The group should prepare an initial task distribution during the early planning stage. Tasks that do not depend on the completed UML diagram can be assigned earlier. The group leader can also provide temporary task assignments and update them when the design is finalised. This allows members to begin their work without waiting for every part of the design to be completed.
 
 
-2. Handoffs
+2. Waiting & Handoffs
 Case-Specific Example:
 A group member shared their completed coding with the group. However, the group leader later informed the member that the shared code had to be modified because the original file could not be opened. As a result, the recipient had to make changes to an accessible version of the code before continuing with the project.
 
@@ -50,3 +53,21 @@ Impact:
 
 Remedy:
 Before developing a new feature, the group should compare its intended output with the existing features. Each feature should have a clear and different purpose. For example, Property Deep-Dive can focus on presenting general hotel information and reviews, while Generate Hotel Report can provide additional statistics and an overall analysis. This helps prevent unnecessary duplication and ensures that each feature provides useful information to users.
+
+
+2. XP Engineering Practices
+
+i) Pair Programming
+This practice involves two developers working together on a single computer. One acts as the Driver, who writes the code, while the other acts as the Navigator, who reviews it and considers alternative solutions.
+In the Hotel Review System, this collaborative approach can be applied when developing features such as traveller profile management and hotel reviews. For example, one member writes the code to update a traveller's profile, while the other verifies that user input is handled properly and existing profile details remain intact.
+Direct code review helps identify errors earlier. The Navigator can also suggest better ways to solve problems before the implementation is finalized. Developers do not have to wait until all the coding is finished to receive feedback because they can discuss and make improvements on the spot.
+
+ii) Test-First Programming (TDD)
+This approach requires developers to write automated unit tests before writing the actual program code. They then write code until the tests pass and refactor it if necessary without breaking the existing test suite.
+In the Hotel Review System, this test-first method can be applied to the hotel ranking function. For instance, developers can write tests to verify that the system ranks hotels accurately based on their ratings. Additional test cases can cover scenarios where two hotels share the same rating or a hotel has no reviews yet.
+Writing tests beforehand ensures that each function behaves as expected and helps catch regressions when the code is modified later. Developers can run the suite immediately after making changes to pinpoint issues quickly without waiting for the entire system to be completed.
+
+iii) Continuous Integration (CI)
+This practice involves frequently merging code changes into a shared repository. Every submission is verified through automated builds and tests to detect integration issues at an early stage.
+In the Hotel Review System, group members can use a shared GitHub repository to store their codebase. Whenever a member pushes updates, the automated pipeline runs builds and tests to ensure the new changes do not disrupt other parts of the system.
+Automated builds and verification checks help detect compilation errors and integration conflicts early on. This minimizes the risk of discovering major issues only when all the code is combined at the end of development. Team members receive feedback as soon as their changes are merged and validated, rather than waiting until everyone has finished coding to see if everything works together.
