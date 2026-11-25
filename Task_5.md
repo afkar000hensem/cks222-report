@@ -1,4 +1,4 @@
-# Process Tailoring & Team Dynamics — Maybank Secure2u
+# Process Tailoring and Team Dynamics — Maybank Secure2u
 
 ## 1. Tailoring with Münch's 4 Ps
 
@@ -9,20 +9,20 @@ Secure2u is a faster and more secure way to approve Maybank2u and MAE transactio
 Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scuttling project success.
 
 ### a) Problem (Complexity, novelty, volatility of constraints)
-* **High Complexity & Novelty:** Replacing legacy SMS TAC/MSOS codes with device spesific key, push notifications, and offline time-based OTPs (Secure TAC) integrated across Maybank2u web, the MAE mobile app, and external FPX/card gateways.
+* **High Complexity and Novelty:** Replacing legacy SMS TAC/MSOS codes with device spesific key, push notifications, and offline time-based OTPs (Secure TAC) integrated across Maybank2u web, the MAE mobile app, and external FPX/card gateways.
 * **High Constraint Volatility:** Rapidly evolving form of apk and malware as a scam vector and a strict evershifting anti-fraud mandates from Bank Negara Malaysia (BNM). For example, a mandatory 12-hour cooling-off periods and ATM activation checks. These requires an adaptive process capable of handling sudden regulatory and security updates.
 
 ### b) Project (Team size, distribution, budget, schedule)
 * **Large, Distributed Teams:** Requires coordinated development across multiple specialized teams, including MAE mobile app teams, core banking backend engineers, payment gateway/FPX teams, cybersecurity operations, and ATM firmware teams.
-* **Strict Schedules & Enterprise Budget:** Backed by substantial enterprise banking capital, but constrained by hard BNM regulatory compliance deadlines (such as the phased retirement of SMS OTPs) and high coordination overhead across distributed engineering and QA team.
+* **Strict Schedules and Enterprise Budget:** Backed by substantial enterprise banking capital, but constrained by hard BNM regulatory compliance deadlines (such as the phased retirement of SMS OTPs) and high coordination overhead across distributed engineering and QA team.
 
 ### c) People (Skill levels, team cohesion, culture, turnover)
 * **Specialized Skill Sets:** Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering, and Malware Shielding), high concurrency backend architecture, and regulatory compliance.
-* **Cross-Team Cohesion & Culture:** Documentation of important are essential to ensure all teams involved act as a cohesive team and reduces culture friction. For example, differences in software process between backend team and frontend team can be smoothly handled through detailed documentation. Standardized documentation and security handoffs are essential to mitigate knowledge loss from staff turnover.
+* **Cross-Team Cohesion and Culture:** Documentation of important are essential to ensure all teams involved act as a cohesive team and reduces culture friction. For example, differences in software process between backend team and frontend team can be smoothly handled through detailed documentation. Standardized documentation and security handoffs are essential to mitigate knowledge loss from staff turnover.
 
 ### d) Product (Criticality, reliability, lifespan, security needs)
-* **Mission-Critical & High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce. Therefore, requires near zero downtime (99.99%+ availability) and strict backup mechanisms such as offline Secure TAC fallback when push notifications fail.
-* **Maximum Security & Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight, it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multiyear lifecycle.
+* **Mission-Critical and High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce. Therefore, requires near zero downtime (99.99%+ availability) and strict backup mechanisms such as offline Secure TAC fallback when push notifications fail.
+* **Maximum Security and Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight, it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multiyear lifecycle.
 
 ---
 
@@ -30,41 +30,30 @@ Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scutt
 
 ### Why Pure Ad-Hoc Agile Fails
 Pure Agile characterised by minimal documentation, informal handoffs, and rapid continuous deployment without heavy gates is incompatible with Secure2u's context:
-* **Product (Criticality & Security Needs):** Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, device spesific verification, and mandatory penetration testing, exposing customers to severe financial loss and Bank Negara Malaysia (BNM) penalties.
-* **Project (Team Size & Distribution):** Development spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.
-* **People (Turnover & Compliance Culture):** In a large enterprise bank, relying on assumed knowledge rather than formal architectural specifications creates high operational risk if key security or backend engineers leave.
+* **Product (Criticality and Security Needs):** Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, device spesific verification, and mandatory penetration testing, exposing customers to severe financial loss and Bank Negara Malaysia (BNM) penalties.
+* **Project (Team Size and Distribution):** Development spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.
+* **People (Turnover and Compliance Culture):** In a large enterprise bank, relying on assumed knowledge rather than formal architectural specifications creates high operational risk if key security or backend engineers leave.
 
 ### Why Rigid, Linear Waterfall Fails
 A purely sequential, heavyweight Waterfall model freezing all requirements upfront with multi-month phase gates before any code is created is also not viable:
 * **Problem (Volatility of Constraints):** Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti scam directive would stall in months of change control bureaucracy while customers remain vulnerable.
-* **Problem (Novelty) & Product (User Friction):** Features such as the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle for user feedback would result in friction heavy UX or high transaction drop-off rates.
+* **Problem (Novelty) and Product (User Friction):** Features such as the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle for user feedback would result in friction heavy UX or high transaction drop-off rates.
 * **People (Cross-Team Culture):** Forcing fast moving mobile app squads (iOS/Android) into a slow release schedule stalls UI improvements and bug fixes that do not touch core infrastructure.
 
 ---
 
 ## 3. Recommended Hybrid Process Models
 
-### 1. Scaled Agile Framework (SAFe) with Stage-Gate Governance
-SAFe combines enterprise-level planning and hard milestone synchronization (prescriptive) with decentralized, sprint-based team execution (agile).
-
-* **Prescriptive Layer (Program & Portfolio Level):** Uses Program Increment (PI) Planning every 8–12 weeks and formal Compliance/Security Stage-Gates to align hard regulatory deadlines (such as Bank Negara Malaysia directives) across all dependent teams—MAE mobile squads, core banking ledger engineers, FPX gateways, and ATM firmware vendors.
-* **Agile Layer (Team Level):** Individual feature squads execute in 2-week Scrum/Kanban sprints to build UI flows, push notification handlers, and anti-malware detection updates once API contracts are locked.
-* **Alignment with Münch's 4 Ps:**
-  * **Project (Team size, distribution, schedule):** Directly addresses multi-team coordination across large, distributed banking departments while enforcing fixed regulatory delivery dates.
-  * **Product (Criticality & reliability):** Built-in architectural runways and formal release gates help ensure features reach production only after passing penetration testing and compliance sign-offs.
-
-### 2. Disciplined Agile (DA)
-Disciplined Agile (DA) is a goal-driven, hybrid process toolkit designed to tailor practices based on team context, risk, and regulatory constraints rather than forcing a single rigid methodology.
-
-* **Prescriptive Layer (Inception & Transition Phases):** Enforces formal upfront architectural modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (such as rolling out a new Secure2u device-binding rule to 5% of users before full release).
-* **Agile Layer (Construction Phase):** Lets teams tailor day-to-day workflows—using iterative sprints for fast-changing mobile UX and Malware Shielding rules, while applying stricter verification loops for core cryptographic modules.
-* **Alignment with Münch's 4 Ps:**
-  * **Problem (Complexity & volatility of constraints):** Adapts smoothly to evolving scam vectors and BNM policy changes without overhauling core security architecture.
-  * **People (Skill levels, culture, turnover):** Balances governance artifacts (protecting against enterprise staff turnover) with embedded security specialists while avoiding over-formalization on low-risk UI tasks.
-
+### 1. Hybrid of Spiral Model and V-Model
+This Hybride combine Spiral Model explicit risk-driven loops and early prototyping with V-Model rigorous requirements-to-test verification mapping
+* **Problem (Volatility of Constraints):** Every spiral loop explicitly prioritizes risk analysis—ideal when new Android malware/APK exploits or urgent BNM anti-scam rules (like cooling-off periods or device verification checks) shift priorities spontaneously.
+* **Product (Reliability and User Friction):** Allows prototyping and controlled risk evaluation around security vs. UX trade-offs (for instance, preventing false lockouts or handling push-notification delivery failures) before full rollout.
+* **Project (Team size, distribution, budget, schedule):**
+  * **Project (Team size, distribution, schedule):** Because the V-Model maps every design phase (System, Architecture, and Module Design) to a corresponding testing phase (Integration, System, and Acceptance Testing), distributed teams—such as core banking backend engineers, ATM firmware vendors, and payment gateway teams—have explicit interface contracts and verification checkpoints before integration.
+  * **People (Skill levels, team cohesion, culture, turnover)** Mandatory requirements-to-test traceability matrices and design specs preserve system knowledge when staff rotate or leave, reducing onboarding friction across banking teams.
 ---
 
-## 4. Tuckman's Team Dynamics & Conflict Management
+## 4. Tuckman's Team Dynamics and Conflict Management
 
 ### 1. Forming
 On **8 October 2026**, the team initially came together with 5 members and quickly agreed on a trusted leader. All members, including the elected leader, accepted the decision smoothly. Ground rules were established early: don't be afraid to ask questions, avoid lone decisions, treat one another respectfully, and help teammates who fall behind.
