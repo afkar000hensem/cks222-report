@@ -25,21 +25,21 @@ Each development stages are mapped to their corresponding testing stages.
 
 1. Requirement Analysis - Acceptance Testing
 
-L: During requirement specification, the team will identifies what people require when making online payments.
-R: During acceptance testing, users will test whether the completed system satisfies the requirements.
+- L: During requirement specification, the team will identifies what people require when making online payments.
+- R: During acceptance testing, users will test whether the completed system satisfies the requirements.
 
 2. System Architecture - System / Integration Testing
 
-L: Team defines functional requirements and non-functional requirements. 
-R: System testing checks whether complete application satisfies these requirements.
+- L: Team defines functional requirements and non-functional requirements. 
+- R: System testing checks whether complete application satisfies these requirements.
 
-L: Team designs relationship between all of the requirements
-R: Integration testing checks whether the requirements communicate properly and correctly.
+- L: Team designs relationship between all of the requirements
+- R: Integration testing checks whether the requirements communicate properly and correctly.
 
 3. Detailed Design - Unit Testing
 
-L: Team defines detailed behaviour for individual functions/requirements
-R: Unit testing will verifies each function works correctly.
+- L: Team defines detailed behaviour for individual functions/requirements
+- R: Unit testing will verifies each function works correctly.
 
 **3.2 Quality Attribute Verification**
 
