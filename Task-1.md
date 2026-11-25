@@ -1,7 +1,7 @@
 # 1.1 SPEM 2.0 Model and Notion EPG — Maybank Secure2u
 
 ## Introduction
-### Analysis
+### Analysis of MAE Transaction with Secure2u
 In a banking app system like MAE produced by Maybank, one of the core features required are money transfers between users or interbank transfers. Therefore, it is
 important that a transaction requires heavy security to prevent data theft or the user's money being stolen. To resolve this issue, Maybank employs a system called
 secure2u as a way to mend these problems, one of which is to bind every transaction onto one registered device set by the user, so that any unauthorized transactions
@@ -23,15 +23,15 @@ products are highly defined and specified. Each role, task, and work products ar
 To start, let us define what is a Role in SPEM 2.0 Version. 
 
 - Role
-A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
+\A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
 For example, someone is assigned as a Tester or a Software Architect.
 
 - Task
-Work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly.
+\Work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly.
 One example is Tester performs test, where Performs Test is the Task.
 
 - Work Product
-Documents or artefacts are either produced or consumed by Roles performing Tasks.
+\Documents or artefacts are either produced or consumed by Roles performing Tasks.
 In other words, it is essentially the reports, codes, documents, diagrams and such being produced or used to complete a task or perform a task.
 
 ## Implementation using Notion EPG
