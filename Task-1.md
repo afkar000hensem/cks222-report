@@ -46,8 +46,10 @@ Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Libra
 | Implementation of Source Code | I | C | A/R | C | C |
 | Quality and Security Report | I | C | C | A/R | R |
 | Testing and Verification Report | C | I | C | A/R | C |
-## Guide on How to Read the RACI Chart
-- R stands for Responsible where specialized roles are assigned to complete the task of the deliverable\
-- A stands for Accountable where a role owns the final outcome of a deliverable and has final decision-making\
-- C stands for Consulted where input is needed before a task is finished or a decision is finalized\
+## RACI Chart Acronym Breakdown
+- R stands for Responsible where specialized roles are assigned to complete the task of the deliverable
+- A stands for Accountable where a role owns the final outcome of a deliverable and has final decision-making
+- C stands for Consulted where input is needed before a task is finished or a decision is finalized
 - I stands for Informed where roles are kept updated on progress, decision, or outcomes
+### Take Note
+No deliverables can have more than one Accountable and at least one Responsible is assigned per deliverable
