@@ -14,6 +14,7 @@ V-Model consists of two main sides:
 Each development stages are mapped to their corresponding testing stages.
 
 | **Left Side - Design Phase** | **Right Side - Testing Phase** |
+|---|---|
 | Requirement Specification | Acceptance Testing |
 | System Architecture | System / Integration Testing |
 | Detailed Design | Unit Testing |
@@ -87,6 +88,7 @@ Based on our second user story, our group decided that the system should support
 **C. Difference Between Verification and Validation**
 
 | Aspect | Verification | Validation |
+|---|---|
 | Main purpose | Confirming that software conforms to the written requirements and specification | Confirming that the completed software satisfies actual user needs and business goals |
 | Main question | Are we building the system right? | Are we building the right system |
 | Security example | Testing whether unregistered devices are blocked from approving payments | Collect feedback on whether customer satisfied on using registered device only |
