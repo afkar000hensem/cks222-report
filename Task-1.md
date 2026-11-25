@@ -40,9 +40,9 @@ Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Libra
 # 1.2 RACI Responsibility Matrix - Maybank Secure2u
 | Engineering Deliverable | Business Analyst | Software Architect | Software Developer | Quality Assurance | DevSecOps Engineer |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
-| Row 2, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
-| Row 3, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
-| Row 4, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
-| Row 5, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
-| Row 6, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Software Requirements Specification | A/R | C | C | C | I |
+| Architecture Design | C | A/R | C | I | C |
+| Secure2u Integration Design | C | A | R | C | R |
+| Implementation of Source Code | I | C | A/R | C | C |
+| Quality and Security Report | I | C | I | A/R | R |
+| Testing and Verification Report | C | I | C | A/R | C |
