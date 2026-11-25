@@ -1,4 +1,4 @@
-# 1.1 SPEM 2.0 Model and Notion EPG — Maybank Secure2u
+# 1.1 SPEM 2.0 Modeling and Notion EPG — Maybank Secure2u
 
 ## Introduction
 ### Analysis of MAE Transaction with Secure2u
@@ -37,3 +37,5 @@ In other words, it is essentially the reports, codes, documents, diagrams and su
 ## Implementation of SPEM 2.0 using Notion EPG
 We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database.\
 Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
+
+# 1.2 RACI Responsibility Matrix
