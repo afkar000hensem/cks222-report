@@ -9,20 +9,20 @@ Secure2u is a faster and more secure way to approve Maybank2u and MAE transactio
 Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scuttling project success.
 
 ### a) Problem (Complexity, novelty, volatility of constraints)
-* **High Complexity & Novelty:** Replacing legacy SMS TAC/MSOS codes with cryptographic device binding, push notifications, and offline time-based OTPs (Secure TAC) integrated across Maybank2u web, the MAE mobile app, and external FPX/card gateways.
-* **High Constraint Volatility:** Rapidly evolving malware/APK scam vectors and strict, shifting anti-fraud mandates from Bank Negara Malaysia (BNM)—such as mandatory 12-hour cooling-off periods and ATM activation checks—require an adaptive process capable of handling sudden regulatory and security updates.
+* **High Complexity & Novelty:** Replacing legacy SMS TAC/MSOS codes with device spesific key, push notifications, and offline time-based OTPs (Secure TAC) integrated across Maybank2u web, the MAE mobile app, and external FPX/card gateways.
+* **High Constraint Volatility:** Rapidly evolving form of apk and malware as a scam vector and a strict evershifting anti-fraud mandates from Bank Negara Malaysia (BNM). For example, a mandatory 12-hour cooling-off periods and ATM activation checks. These requires an adaptive process capable of handling sudden regulatory and security updates.
 
 ### b) Project (Team size, distribution, budget, schedule)
-* **Large, Distributed Teams:** Requires coordinated development across multiple specialized squads, including MAE mobile app teams, core banking backend engineers, payment gateway/FPX teams, cybersecurity/fraud operations, and ATM firmware teams.
-* **Strict Schedules & Enterprise Budget:** Backed by substantial enterprise banking capital, but constrained by hard BNM regulatory compliance deadlines (such as the phased retirement of SMS OTPs) and high coordination overhead across distributed engineering and QA units.
+* **Large, Distributed Teams:** Requires coordinated development across multiple specialized teams, including MAE mobile app teams, core banking backend engineers, payment gateway/FPX teams, cybersecurity operations, and ATM firmware teams.
+* **Strict Schedules & Enterprise Budget:** Backed by substantial enterprise banking capital, but constrained by hard BNM regulatory compliance deadlines (such as the phased retirement of SMS OTPs) and high coordination overhead across distributed engineering and QA team.
 
 ### c) People (Skill levels, team cohesion, culture, turnover)
-* **Specialized Skill Sets:** Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering, and Malware Shielding), high-concurrency backend architecture, and regulatory compliance.
-* **Cross-Team Cohesion & Culture:** Bridges traditional core-banking Waterfall/governance culture with agile mobile product teams. Standardized documentation and security handoffs are essential to mitigate knowledge loss from enterprise staff turnover.
+* **Specialized Skill Sets:** Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering, and Malware Shielding), high concurrency backend architecture, and regulatory compliance.
+* **Cross-Team Cohesion & Culture:** Documentation of important are essential to ensure all teams involved act as a cohesive team and reduces culture friction. For example, differences in software process between backend team and frontend team can be smoothly handled through detailed documentation. Standardized documentation and security handoffs are essential to mitigate knowledge loss from staff turnover.
 
 ### d) Product (Criticality, reliability, lifespan, security needs)
-* **Mission-Critical & High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce; requires near-zero downtime (99.99%+ availability) and strict failover mechanisms (such as offline Secure TAC fallback when push notifications fail).
-* **Maximum Security & Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight—it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multi-year lifecycle.
+* **Mission-Critical & High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce. Therefore, requires near zero downtime (99.99%+ availability) and strict backup mechanisms such as offline Secure TAC fallback when push notifications fail.
+* **Maximum Security & Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight, it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multiyear lifecycle.
 
 ---
 
