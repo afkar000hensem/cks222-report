@@ -44,8 +44,8 @@ A purely sequential, heavyweight Waterfall model freezing all requirements upfro
 
 ## 3. Recommended Hybrid Process Models
 
-### 1. Hybrid of Spiral Model and V-Model
-This Hybride combine Spiral Model explicit risk-driven loops and early prototyping with V-Model rigorous requirements-to-test verification mapping
+### Hybrid of Spiral Model and V-Model
+This Hybrid combine Spiral Model explicit risk-driven loops and early prototyping with V-Model rigorous requirements-to-test verification mapping
 * **Problem (Volatility of Constraints):** Every spiral loop explicitly prioritizes risk analysis—ideal when new Android malware/APK exploits or urgent BNM anti-scam rules (like cooling-off periods or device verification checks) shift priorities spontaneously.
 * **Product (Reliability and User Friction):** Allows prototyping and controlled risk evaluation around security vs. UX trade-offs (for instance, preventing false lockouts or handling push-notification delivery failures) before full rollout.
 * **Project (Team size, distribution, schedule):** Because the V-Model maps every design phase (System, Architecture, and Module Design) to a corresponding testing phase (Integration, System, and Acceptance Testing), distributed teams—such as core banking backend engineers, ATM firmware vendors, and payment gateway teams—have explicit interface contracts and verification checkpoints before integration.
