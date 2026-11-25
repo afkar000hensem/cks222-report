@@ -1,5 +1,4 @@
 # 1.1 SPEM 2.0 Modeling and Notion EPG — Maybank Secure2u
-
 ## Introduction
 ### Analysis of MAE Transaction with Secure2u
 In a banking app system like MAE produced by Maybank, one of the core features required are money transfers between users or interbank transfers. Therefore, it is
@@ -38,4 +37,12 @@ In other words, it is essentially the reports, codes, documents, diagrams and su
 We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database.\
 Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
 
-# 1.2 RACI Responsibility Matrix
+# 1.2 RACI Responsibility Matrix - Maybank Secure2u
+| Engineering Deliverable | Business Analyst | Software Architect | Software Developer | Quality Assurance | DevSecOps Engineer |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Row 2, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Row 3, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Row 4, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Row 5, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
+| Row 6, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 4 | Row 1, Col 5 | Row 1, Col 6 |
