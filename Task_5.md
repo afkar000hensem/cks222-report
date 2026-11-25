@@ -29,16 +29,16 @@ Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scutt
 ## 2. Why Extreme Process Models Fail for Secure2u
 
 ### Why Pure Ad-Hoc Agile Fails
-Pure, unbridled Agile—characterized by minimal documentation, informal handoffs, and rapid continuous deployment without heavy gates—is incompatible with Secure2u's context:
-* **Product (Criticality & Security Needs):** Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, cryptographic verification, and mandatory penetration testing, exposing customers to severe financial loss and Bank Negara Malaysia (BNM) penalties.
+Pure Agile characterised by minimal documentation, informal handoffs, and rapid continuous deployment without heavy gates is incompatible with Secure2u's context:
+* **Product (Criticality & Security Needs):** Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, device spesific verification, and mandatory penetration testing, exposing customers to severe financial loss and Bank Negara Malaysia (BNM) penalties.
 * **Project (Team Size & Distribution):** Development spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.
-* **People (Turnover & Compliance Culture):** In a large enterprise bank, relying on tacit knowledge rather than formal architectural specifications creates high operational risk if key security or backend engineers leave.
+* **People (Turnover & Compliance Culture):** In a large enterprise bank, relying on assumed knowledge rather than formal architectural specifications creates high operational risk if key security or backend engineers leave.
 
 ### Why Rigid, Linear Waterfall Fails
-A purely sequential, heavyweight Waterfall model—freezing all requirements upfront with multi-month phase gates before any code ships—is also not viable:
-* **Problem (Volatility of Constraints):** Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti-scam directive would stall in months of change-control bureaucracy while customers remain vulnerable.
-* **Problem (Novelty) & Product (User Friction):** Features such as the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle for user feedback would result in friction-heavy UX or high transaction drop-off rates.
-* **People (Cross-Team Culture):** Forcing fast-moving mobile app squads (iOS/Android) into a slow mainframe release cadence stalls UI improvements and bug fixes that do not touch core cryptographic infrastructure.
+A purely sequential, heavyweight Waterfall model freezing all requirements upfront with multi-month phase gates before any code is created is also not viable:
+* **Problem (Volatility of Constraints):** Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti scam directive would stall in months of change control bureaucracy while customers remain vulnerable.
+* **Problem (Novelty) & Product (User Friction):** Features such as the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle for user feedback would result in friction heavy UX or high transaction drop-off rates.
+* **People (Cross-Team Culture):** Forcing fast moving mobile app squads (iOS/Android) into a slow release schedule stalls UI improvements and bug fixes that do not touch core infrastructure.
 
 ---
 
