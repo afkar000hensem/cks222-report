@@ -20,7 +20,7 @@ In this case, we will use the Objective Management Group (OMG) Software & System
 products are highly defined and specified. Each role, task, and work products are then used by the Method Content to define a step-by-step explanations that describes how specific development goals are achieved by which roles with which resources.
 
 ## Brief Theoretical Explanation
-To start, let us define what is a Role in SPEM 2.0 Version. 
+To start, let us define briefly what is Role, Task, Work Product in SPEM 2.0 Version. 
 
 - Role\
 A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
@@ -35,5 +35,5 @@ Documents or artefacts are either produced or consumed by Roles performing Tasks
 In other words, it is essentially the reports, codes, documents, diagrams and such being produced or used to complete a task or perform a task.
 
 ## Implementation using Notion EPG
-We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database with active Notion share link.
+We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database with active Notion share link.\
 Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
