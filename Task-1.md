@@ -42,7 +42,7 @@ Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Libra
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | Software Requirements Specification | A/R | C | C | C | C |
 | Architecture Design | C | A/R | C | I | C |
-| Secure2u Integration Design | C | A | R | C | R |
+| Secure2u Integration Design | I | A | R | C | R |
 | Implementation of Source Code | I | C | A/R | C | C |
 | Quality and Security Report | I | C | C | A/R | R |
 | Testing and Verification Report | C | I | C | A/R | C |
