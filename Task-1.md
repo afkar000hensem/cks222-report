@@ -22,16 +22,16 @@ products are highly defined and specified. Each role, task, and work products ar
 ## Brief Theoretical Explanation
 To start, let us define what is a Role in SPEM 2.0 Version. 
 
-- Role
-\A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
+- Role\
+A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
 For example, someone is assigned as a Tester or a Software Architect.
 
-- Task
-\Work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly.
+- Task\
+Work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly.
 One example is Tester performs test, where Performs Test is the Task.
 
-- Work Product
-\Documents or artefacts are either produced or consumed by Roles performing Tasks.
+- Work Product\
+Documents or artefacts are either produced or consumed by Roles performing Tasks.
 In other words, it is essentially the reports, codes, documents, diagrams and such being produced or used to complete a task or perform a task.
 
 ## Implementation using Notion EPG
