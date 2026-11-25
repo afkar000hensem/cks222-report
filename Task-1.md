@@ -51,5 +51,5 @@ Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Libra
 - A stands for Accountable where a role owns the final outcome of a deliverable and has final decision-making
 - C stands for Consulted where input is needed before a task is finished or a decision is finalized
 - I stands for Informed where roles are kept updated on progress, decision, or outcomes
-### Take Note
+### Things to Take into Consideration
 No deliverables can have more than one Accountable and at least one Responsible is assigned per deliverable
