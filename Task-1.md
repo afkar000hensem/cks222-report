@@ -34,6 +34,6 @@ One example is Tester performs test, where Performs Test is the Task.
 Documents or artefacts are either produced or consumed by Roles performing Tasks.
 In other words, it is essentially the reports, codes, documents, diagrams and such being produced or used to complete a task or perform a task.
 
-## Implementation using Notion EPG
+## Implementation of SPEM 2.0 using Notion EPG
 We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database.\
 Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
