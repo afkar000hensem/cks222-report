@@ -1,6 +1,7 @@
 # 1.1 SPEM 2.0 Model and Notion EPG — Maybank Secure2u
 
-## Introduction and Analysis
+## Introduction
+### Analysis
 In a banking app system like MAE produced by Maybank, one of the core features required are money transfers between users or interbank transfers. Therefore, it is
 important that a transaction requires heavy security to prevent data theft or the user's money being stolen. To resolve this issue, Maybank employs a system called
 secure2u as a way to mend these problems, one of which is to bind every transaction onto one registered device set by the user, so that any unauthorized transactions
@@ -14,20 +15,25 @@ Therefore, a revised Software Process Model is needed to minimize the amount of 
 responsibilities and resources used are specified, defined and standardised so that every member of the project know their roles, responsibilities and guide on how
 should the standard operating procedure be executed for each processes.
 
+### Suggested Process Metamodel Standard
 In this case, we will use the Objective Management Group (OMG) Software & Systems Process Engineering Metamodel (SPEM) 2.0 Version where every role, task and work
-products are highly defined and specified. Each role, task, and work products are then used by the Method Content to define a step-by-step explanations that describes
-how specific development goals are achieved by which roles with which resources.
+products are highly defined and specified. Each role, task, and work products are then used by the Method Content to define a step-by-step explanations that describes how specific development goals are achieved by which roles with which resources.
 
 ## Brief Theoretical Explanation
-To start, let us define what is a Role in SPEM 2.0 Version. A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
+To start, let us define what is a Role in SPEM 2.0 Version. 
+
+- Role
+A Role usually defines who (a person) is responsible for a specific set of functions, skills and competencies.
 For example, someone is assigned as a Tester or a Software Architect.
 
-Then, we have the Task in which it is a work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly. One example is Tester
-performs test, where Performs Test is the Task.
+- Task
+Work that is being performed by Roles, usually divided in sequential steps for Roles to follow accordingly.
+One example is Tester performs test, where Performs Test is the Task.
 
-Lastly, we have the Work Product where documents or artefacts are either produced or consumed by Roles performing Tasks. In other words, it is essentially the reports,
-codes, documents, diagrams and such being produced or used to complete a task or perform a task.
+- Work Product
+Documents or artefacts are either produced or consumed by Roles performing Tasks.
+In other words, it is essentially the reports, codes, documents, diagrams and such being produced or used to complete a task or perform a task.
 
 ## Implementation using Notion EPG
 We will create the SPEM 2.0 Model using a software called Notion where the model will be created in a relational Notion database with active Notion share link.
-https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
+Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Library-Maybank-s-Online-Transaction-Features-with-Secure2u-42266e625e9180dc9ed9ce707ccffd93?source=copy_link
