@@ -1,6 +1,6 @@
-#**Symmetrical Verification and Validation (V-Model design)**
+# **Symmetrical Verification and Validation (V-Model design)**
 
-**3.1 V-Model Symmetrical Mapping**
+## **3.1 V-Model Symmetrical Mapping**
 
 **Selected Feature:** Secure Online Payment Authorisation with Secure2u Module
 
@@ -41,7 +41,7 @@ Each development stages are mapped to their corresponding testing stages.
 - L: Team defines detailed behaviour for individual functions/requirements
 - R: Unit testing will verifies each function works correctly.
 
-**3.2 Quality Attribute Verification**
+## **3.2 Quality Attribute Verification**
 
 A. Based on the selected Secure2u payment authorisation feature, our team identifies security as the non-functional quality attribute and local biometric authentications the technical constraint.
 
