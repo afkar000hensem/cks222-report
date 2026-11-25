@@ -1,122 +1,84 @@
-1. Tailoring with Münch's 4 Ps
+# Process Tailoring & Team Dynamics — Maybank Secure2u
 
-Project in context: Maybank Secure2u
+## 1. Tailoring with Münch's 4 Ps
 
-Secure2u is the safer and quick way to approve your Maybank2u and MAE transactions, using Secure Verification (one-tap approval).
-This feature is available on the MAE app. Once you have activated Secure2u, it will be the default method to approve ALL transactions.
+**Project in context: Maybank Secure2u**
 
-Münch's 4 Ps can be applied to prevent heavyweight process overhead from scuttling project success.
-a) Problem (Complexity, novelty, volatility of constraints)
+Secure2u is a faster and more secure way to approve Maybank2u and MAE transactions using **Secure Verification** (one-tap approval). Available on the MAE app, once activated it becomes the default method for approving transactions.
 
-High Complexity & Novelty: 
-Replacing legacy SMS TAC/MSOS codes with cryptographic device binding, push notifications, and offline time-based OTPs (Secure TAC)
-integrated across Maybank2u web, MAE mobile app, and external FPX/card gateways.
+Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scuttling project success.
 
-High Constraint Volatility:
-Rapidly evolving malware/APK scam vectors and strict, shifting anti-fraud mandates from Bank Negara Malaysia (BNM)—such as mandatory 12-hour 
-cooling-off periods and ATM activation checks—requiring an adaptive process that handles sudden regulatory and security updates.
+### a) Problem (Complexity, novelty, volatility of constraints)
+* **High Complexity & Novelty:** Replacing legacy SMS TAC/MSOS codes with cryptographic device binding, push notifications, and offline time-based OTPs (Secure TAC) integrated across Maybank2u web, the MAE mobile app, and external FPX/card gateways.
+* **High Constraint Volatility:** Rapidly evolving malware/APK scam vectors and strict, shifting anti-fraud mandates from Bank Negara Malaysia (BNM)—such as mandatory 12-hour cooling-off periods and ATM activation checks—require an adaptive process capable of handling sudden regulatory and security updates.
 
-b) Project (Team size, distribution, budget, schedule)
+### b) Project (Team size, distribution, budget, schedule)
+* **Large, Distributed Teams:** Requires coordinated development across multiple specialized squads, including MAE mobile app teams, core banking backend engineers, payment gateway/FPX teams, cybersecurity/fraud operations, and ATM firmware teams.
+* **Strict Schedules & Enterprise Budget:** Backed by substantial enterprise banking capital, but constrained by hard BNM regulatory compliance deadlines (such as the phased retirement of SMS OTPs) and high coordination overhead across distributed engineering and QA units.
 
-Large, Distributed Teams: 
-Requires coordinated development across multiple specialized squads (MAE mobile app teams, core banking backend, 
-payment gateway/FPX teams, cybersecurity/fraud operations, and ATM firmware teams).
+### c) People (Skill levels, team cohesion, culture, turnover)
+* **Specialized Skill Sets:** Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering, and Malware Shielding), high-concurrency backend architecture, and regulatory compliance.
+* **Cross-Team Cohesion & Culture:** Bridges traditional core-banking Waterfall/governance culture with agile mobile product teams. Standardized documentation and security handoffs are essential to mitigate knowledge loss from enterprise staff turnover.
 
-Strict Schedules & Enterprise Budget: 
-Backed by substantial enterprise banking capital, but constrained by hard regulatory compliance deadlines from BNM (e.g., phased phase-out of SMS OTPs) 
-and high coordination overhead across distributed engineering and QA units.
+### d) Product (Criticality, reliability, lifespan, security needs)
+* **Mission-Critical & High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce; requires near-zero downtime (99.99%+ availability) and strict failover mechanisms (such as offline Secure TAC fallback when push notifications fail).
+* **Maximum Security & Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight—it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multi-year lifecycle.
 
-c) People (Skill levels, team cohesion, culture, turnover)
+> **Key Takeaway:** Tailoring the development process for Maybank Secure2u around Münch's 4 Ps (**Problem**, **Project**, **People**, **Product**) reveals conflicting operational demands: extreme safety and regulatory accountability on one side, and rapidly evolving fraud threats on the other. Choosing either extreme—pure ad-hoc Agile or rigid, linear Waterfall—would risk project failure.
 
-Specialized Skill Sets: 
-Demands engineers experienced in mobile security (iOS Keychain / Android Keystore, anti-tampering/Malware Shielding), 
-high-concurrency backend architecture, and regulatory compliance.
+---
 
-Cross-Team Cohesion & Culture: 
-Bridging traditional core-banking Waterfall/governance culture with agile mobile product teams; 
-standardized documentation and security handoffs are essential to mitigate knowledge loss from enterprise staff turnover.
+## 2. Why Extreme Process Models Fail for Secure2u
 
-d) Product (Criticality, reliability, lifespan, security needs)
-Mission-Critical & High Reliability: 
-Handles millions of daily financial authorizations where downtime directly blocks national commerce; 
-requires near-zero downtime (99.99%+ availability) and strict failover mechanisms (e.g., offline Secure TAC fallback when push notifications fail).
+### Why Pure Ad-Hoc Agile Fails
+Pure, unbridled Agile—characterized by minimal documentation, informal handoffs, and rapid continuous deployment without heavy gates—is incompatible with Secure2u's context:
+* **Product (Criticality & Security Needs):** Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, cryptographic verification, and mandatory penetration testing, exposing customers to severe financial loss and Bank Negara Malaysia (BNM) penalties.
+* **Project (Team Size & Distribution):** Development spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.
+* **People (Turnover & Compliance Culture):** In a large enterprise bank, relying on tacit knowledge rather than formal architectural specifications creates high operational risk if key security or backend engineers leave.
 
-Maximum Security & Long Lifespan: 
-Because financial loss and regulatory penalties are severe, the software process cannot be lightweight—it must enforce formal threat modeling, 
-penetration testing, code audits, and strict release gates over a multi-year lifecycle.
+### Why Rigid, Linear Waterfall Fails
+A purely sequential, heavyweight Waterfall model—freezing all requirements upfront with multi-month phase gates before any code ships—is also not viable:
+* **Problem (Volatility of Constraints):** Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti-scam directive would stall in months of change-control bureaucracy while customers remain vulnerable.
+* **Problem (Novelty) & Product (User Friction):** Features such as the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle for user feedback would result in friction-heavy UX or high transaction drop-off rates.
+* **People (Cross-Team Culture):** Forcing fast-moving mobile app squads (iOS/Android) into a slow mainframe release cadence stalls UI improvements and bug fixes that do not touch core cryptographic infrastructure.
 
-Tailoring the development process for Maybank Secure2u around Münch's 4 Ps (Problem, Project, People, Product) reveals conflicting operational demands: 
-extreme safety and regulatory accountability on one side, and rapidly evolving fraud threats on the other. 
-Choosing either extreme—pure ad-hoc Agile or rigid, linear Waterfall—would cause project failure.
+---
 
-2. Why Extreme Process Models Fail for Secure2u
+## 3. Recommended Hybrid Process Models
 
-- Why Pure Ad-Hoc Agile Fails
-
-Pure, unbridled Agile (minimal documentation, informal handoffs, rapid continuous deployment without heavy gates) is incompatible with Secure2u's context:
-Product (Criticality & Security Needs): Secure2u authorizes millions of ringgit in daily transactions. Ad-hoc practices bypass formal threat modeling, cryptographic verification, and mandatory penetration testing, exposing customers to catastrophic financial loss and Bank Negara Malaysia (BNM) penalties.   
-Project (Team Size & Distribution): Developing Secure2u spans separate MAE mobile teams, core banking ledger engineers, FPX/card gateway teams, and ATM firmware vendors. Informal, verbal Agile coordination breaks down across distributed enterprise teams, leading to integration failures and unversioned API mismatches.   
-People (Turnover & Compliance Culture): In a large enterprise bank, relying on tacit knowledge rather than formal architectural specifications creates severe operational risk if key security or backend engineers leave.  
-
-- Why Rigid, Linear Waterfall Fails
-
-A purely sequential, heavyweight Waterfall model (freezing all requirements upfront, multi-month phase gates before any code ships) is also not viable:
-Problem (Volatility of Constraints): Financial malware (such as malicious Android APKs intercepting notifications) and social engineering tactics evolve monthly. Under rigid Waterfall, responding to a newly discovered exploit or an urgent BNM anti-scam directive would stall in months of change-control bureaucracy while customers remain vulnerable.   
-Problem (Novelty) & Product (User Friction): Features like the 12-hour cooling-off period, Malware Shielding, and ATM activation require real-world telemetry to balance security against legitimate user lockouts. Waiting until the end of a 12-month Waterfall cycle to gather user feedback would result in unusable UX or high transaction drop-off rates.  
-People (Cross-Team Culture): Forcing fast-moving mobile app squads (iOS/Android) into a slow mainframe release cadence stalls UI improvements and bug fixes that do not touch core cryptographic infrastructure.
-
-1. Scaled Agile Framework (SAFe) with Stage-Gate Governance
+### 1. Scaled Agile Framework (SAFe) with Stage-Gate Governance
 SAFe combines enterprise-level planning and hard milestone synchronization (prescriptive) with decentralized, sprint-based team execution (agile).
-SAFe for Secure2u:
--Prescriptive Layer (Program & Portfolio Level): 
---Uses Program Increment (PI) Planning every 8–12 weeks and formal Compliance/Security Stage-Gates to align hard regulatory deadlines (e.g., Bank Negara Malaysia directives) across all dependent teams—MAE mobile squads, core banking ledger engineers, FPX gateways, and ATM firmware vendors.
 
--Agile Layer (Team Level): 
---Individual feature squads execute in 2-week Scrum/Kanban sprints to build UI flows, push notification handlers, and anti-malware detection updates once API contracts are locked.Alignment with Münch's 4 Ps:   Project (Team size, distribution, schedule): Directly solves multi-team coordination across large, distributed banking departments while enforcing fixed regulatory delivery dates.   
+* **Prescriptive Layer (Program & Portfolio Level):** Uses Program Increment (PI) Planning every 8–12 weeks and formal Compliance/Security Stage-Gates to align hard regulatory deadlines (such as Bank Negara Malaysia directives) across all dependent teams—MAE mobile squads, core banking ledger engineers, FPX gateways, and ATM firmware vendors.
+* **Agile Layer (Team Level):** Individual feature squads execute in 2-week Scrum/Kanban sprints to build UI flows, push notification handlers, and anti-malware detection updates once API contracts are locked.
+* **Alignment with Münch's 4 Ps:**
+  * **Project (Team size, distribution, schedule):** Directly addresses multi-team coordination across large, distributed banking departments while enforcing fixed regulatory delivery dates.
+  * **Product (Criticality & reliability):** Built-in architectural runways and formal release gates help ensure features reach production only after passing penetration testing and compliance sign-offs.
 
--Product (Criticality & reliability): 
---Built-in architectural runways and formal release gates ensure no feature reaches production without passing penetration testing and compliance sign-offs.   
+### 2. Disciplined Agile (DA)
+Disciplined Agile (DA) is a goal-driven, hybrid process toolkit designed to tailor practices based on team context, risk, and regulatory constraints rather than forcing a single rigid methodology.
 
-2. Disciplined Agile (DA) 
-Agile is a goal-driven, hybrid process toolkit designed specifically to tailor practices based on team context, risk, and regulatory constraints rather than forcing a single rigid methodology.
-DA for Secure2u:
--Prescriptive Layer (Inception & Transition Phases): Enforces formal upfront Architectural Modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (e.g., rolling out a new Secure2u device-binding rule to 5% of users before full release).
--Agile Layer (Construction Phase): Allows teams to tailor their day-to-day workflow—using iterative sprints for fast-changing mobile UX and Malware Shielding rules, while applying stricter verification loops for core cryptographic modules.
--Alignment with Münch's 4 Ps:   
---Problem (Complexity & volatility of constraints): Adapts smoothly to evolving scam vectors and BNM policy changes without tearing down core security architecture.   
---People (Skill levels, culture, turnover): Balances governance artifacts (protecting against enterprise staff turnover) with embedded security specialists, avoiding the "danger of over-formalization" on low-risk UI tasks.
+* **Prescriptive Layer (Inception & Transition Phases):** Enforces formal upfront architectural modeling, threat modeling, and a dedicated Transition Phase for production readiness, security audits, and phased canary rollouts (such as rolling out a new Secure2u device-binding rule to 5% of users before full release).
+* **Agile Layer (Construction Phase):** Lets teams tailor day-to-day workflows—using iterative sprints for fast-changing mobile UX and Malware Shielding rules, while applying stricter verification loops for core cryptographic modules.
+* **Alignment with Münch's 4 Ps:**
+  * **Problem (Complexity & volatility of constraints):** Adapts smoothly to evolving scam vectors and BNM policy changes without overhauling core security architecture.
+  * **People (Skill levels, culture, turnover):** Balances governance artifacts (protecting against enterprise staff turnover) with embedded security specialists while avoiding over-formalization on low-risk UI tasks.
 
-(Tuckman's Team Dynamics & Fist-of-Five Governance)
-1. Forming
+---
 
-On 8 october 2026 the team was first consisting of 5 members. Quickly deciding to put the person who can be trusted with responsibility of a leader. All the
-member including the elected leader agree to this decision without issue. Some ground rules were establish such as dont be afraid to ask question, no making
-lone decision, do not be rude and help each other if someone is lagging behind.
+## 4. Tuckman's Team Dynamics & Conflict Management
 
-2. Storming
+### 1. Forming
+On **8 October 2026**, the team initially came together with 5 members and quickly agreed on a trusted leader. All members, including the elected leader, accepted the decision smoothly. Ground rules were established early: don't be afraid to ask questions, avoid lone decisions, treat one another respectfully, and help teammates who fall behind.
 
-This phase is characterised by every team member including the leader giving their opinion as to how to approach the assignment and debating each other over
-how to proceed. For example, we debated over whose company and usm project should be audited. Every team member also take responsibility in 
-mentioning each other in our whatsapp group to ensure that everyone is involved in doing the work without possibility of a free rider.
+### 2. Storming
+During storming, every member—including the leader—shared opinions on how to approach the assignment and debated how to proceed, such as which company and USM project to audit. Members also actively tagged one another in the WhatsApp group to keep everyone engaged and prevent free-riding.
 
-3. Norming
+### 3. Norming
+After a week of ongoing discussion about the assignment, cooperation improved and disagreements were resolved by checking interpretations against the assignment instructions to find the most accurate consensus. Roles were assigned through a first-come, first-served poll, reducing friction over task ownership.
 
-After a week of casual conversation about the assignment. Cooperation improved until eventually any disagreement was solved by comparing each interpretation 
-to the assignment instruction and picking the approach with the closest accuracy and become the consensus among team members. During this parts, roles were 
-assigned to each other by each member selecting from a poll on a first-come, first-served basis. Doing this reduces conflict about who is assigned to what
-task.
+### 4. Performing
+In the final two weeks before submission, the team operated as a cohesive unit with flexible task sharing. Members reviewed each other's work and offered constructive feedback, catching minor errors early and fixing them quickly so progress stayed steady with minimal roadblocks through completion.
 
-4.Performing
-
-In the last 2 week before submitting this assignment the team become one cohesive unit with a flexible work designation where each member is encourage to
-supervise each others work and give comment on improvement as well as providing constructive criticism. Peer review, constructive feedback, and flexible task 
-sharing is improtant in reducing error gaps, noticing small mistake and allow for a quicker fix. The assignment was being develop slowly but smoothly
-with little roadblock until the work is finish.
-
-
-How we managed conflict during our process engineering tasks.
-
-When conflicts appear, we would held a team-wide discussions where each member backed their view with evidence from the assignment instruction. 
-We made sure quieter members were heard and no single voice dominated the discussion. Once all perspectives and supporting evidence were considered, 
-we reached the final decisions through majority agreement while making sure to check for remaining concerns so potential gaps were
-addressed before moving forward.
+### How We Managed Conflict During Process Engineering Tasks
+When conflicts arose, we held team-wide discussions where members backed their viewpoints with evidence from the assignment instructions. We made sure quieter voices were heard and no single person dominated the conversation. After weighing all perspectives and supporting evidence, we reached decisions by majority agreement while checking for remaining concerns so potential gaps were addressed before moving forward.
