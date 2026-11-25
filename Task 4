@@ -1,73 +1,36 @@
-Assignment Context
-The assignment being audited is the Hotel Review System, which was developed as a group assignment for Object-Oriented Programming (CKC112). The aim was to develop a program that brings hotel reviews and traveller information together in one place. The program allows users to read hotel reviews, view and update traveller profiles, rank hotels based on their ratings, and identify travellers who write the most reviews. The assignment also required the implementation of specific OOP concepts, including inheritance and friend functions.
+Assignment context:
 
-4.1 Lean Waste Audit and Remedies
+1. Lean Waste and Remedies
 
-1. Waiting & Handsoff
-Case-Specific Example:
-The group leader informed the members that specific tasks could not be assigned yet because the UML diagram needed to be completed first. At that time, members were only asked to prepare coding and example outputs. Further task distribution took place on the other day when members discussed how to divide the coding tasks, including the classes assigned to each member.
-
+i) Waiting & Handoffs
+Case-specific example:
+The Process View and Development View could not be started until the Logical View was completed, because both relied on its classes and structure. The member working on the Process View was also waiting for the Logical View diagram to be finished before they could correct their own work. Meanwhile, the Sequence Diagram member had to ask to be informed whenever the UML changed, since each change affected the Sequence Diagram.
 Impact:
-- Some members did not receive clear task assignments until the initial design was ready.
-- This reduced the opportunity for members to work on their assigned tasks simultaneously from the beginning.
-- Delayed task distribution could also affect the time available for completing and reviewing the project.
-
+Work that depended on the Logical View could not progress in parallel, which left less room to review and refine the dependent diagrams. Each UML change also required extra messages to keep the Sequence Diagram consistent.
 Remedy:
-The group should prepare an initial task distribution during the early planning stage. Tasks that do not depend on the completed UML diagram can be assigned earlier. The group leader can also provide temporary task assignments and update them when the design is finalised. This allows members to begin their work without waiting for every part of the design to be completed.
+Complete the Class Diagram first as a baseline, then start the dependent views from it. Once it is agreed, changes should be announced in the group chat before the dependent diagrams are updated.
 
-
-2. Waiting & Handoffs
-Case-Specific Example:
-A group member shared their completed coding with the group. However, the group leader later informed the member that the shared code had to be modified because the original file could not be opened. As a result, the recipient had to make changes to an accessible version of the code before continuing with the project.
-
+ii) Defects and Rework
+Case-specific example:
+During the review, the Sequence Diagram and Use Case Diagram did not match the Class Diagram. For example, viewReward() appeared in the Sequence Diagram but not in the Class Diagram, and method names differed between the diagrams, such as manageClass() and manageClasses().
 Impact:
-- Additional time was needed to access and modify the shared code.
-- The group needed extra communication to ensure that everyone was working with the correct version.
-- Changes made during the handoff could create confusion if members were not informed about the latest updates.
-
+The inconsistencies made the design unclear and required the affected diagrams to be corrected, which added extra effort to the report.
 Remedy:
-The group should use one shared project folder that all members can access. Before handing over completed code, members should check that the files can be opened and used by others. Any changes to the code should also be communicated clearly so that members can work with the latest version.
+Treat the Class Diagram as the single source of truth. Before finalising, check every method and actor in the Sequence and Use Case Diagrams against it, and update the written explanations at the same time.
 
-
-3. Reworks & Defects
-Case-Specific Example:
-The group leader identified inconsistencies between the project documentation and the actual implementation. The Process Identification and Requirement Specification sections needed changes because some of their descriptions did not match the implemented code. The Class Definition section was also identified as potentially inconsistent. These issues were later reviewed and corrected by a group member.
-
+iii) Defects and Rework
+Case-specific example:
+The rewards requirement in the assignment instructions was initially overlooked, as it was assumed to be unnecessary. The reward feature had even been removed from the Sequence Diagram and Use Case Diagram because it was missing from the Class Diagram. When the requirement was noticed, the group had to add viewReward() back and adjust the related diagrams.
 Impact:
-- Additional time was required to review and correct the documentation.
-- Inconsistencies could make it difficult for readers to understand how the system actually works.
-- The final report might not accurately represent the completed system if these issues were not corrected.
-
+Diagrams that had already been completed had to be reopened, which increased the amount of rework.
 Remedy:
-The group should review the documentation alongside the actual code throughout development instead of waiting until the end. When a feature or class is changed, the related documentation should also be updated. Before submission, the group should perform a final consistency check to ensure that the descriptions match the implemented system.
+Read the full instructions together at the start and list every required feature in a checklist, then tick each one off against the diagrams before submission.
 
-
-4. Overproduction
-Case-Specific Example:
-The group leader noticed that the Property Deep-Dive and Generate Hotel Report features initially displayed almost the same information. Both features showed the hotel name, total number of reviews and average rating. This meant that the two features provided very similar information to users. The Generate Hotel Report feature was later improved to include additional statistics, such as the highest and lowest ratings and the percentage of excellent reviews.
-
+iv) Overprocessing
+Case-specific example:
+The instructions asked for one diagram per view, yet the group discussed whether to add a Data Flow Diagram, noting that other groups had drawn more than one. The Process View also ended up with two diagrams, which increased the page count and required adjustments to image sizes and layout.
 Impact:
-- Time was initially spent developing two features that provided almost identical information.
-- Repeated information offered limited additional value to users.
-- The team needed to make further changes to give the report a clearer purpose.
-
+The extra diagram and the discussion took attention away from checking the required diagrams. The additional length also required formatting changes to keep the report within the page limit.
 Remedy:
-Before developing a new feature, the group should compare its intended output with the existing features. Each feature should have a clear and different purpose. For example, Property Deep-Dive can focus on presenting general hotel information and reviews, while Generate Hotel Report can provide additional statistics and an overall analysis. This helps prevent unnecessary duplication and ensures that each feature provides useful information to users.
+Decide the number of diagrams per view from the instructions before drawing anything, and add an extra diagram only if it covers something the required one cannot.
 
-
-2. XP Engineering Practices
-
-i) Pair Programming
-This practice involves two developers working together on a single computer. One acts as the Driver, who writes the code, while the other acts as the Navigator, who reviews it and considers alternative solutions.
-In the Hotel Review System, this collaborative approach can be applied when developing features such as traveller profile management and hotel reviews. For example, one member writes the code to update a traveller's profile, while the other verifies that user input is handled properly and existing profile details remain intact.
-Direct code review helps identify errors earlier. The Navigator can also suggest better ways to solve problems before the implementation is finalized. Developers do not have to wait until all the coding is finished to receive feedback because they can discuss and make improvements on the spot.
-
-ii) Test-First Programming (TDD)
-This approach requires developers to write automated unit tests before writing the actual program code. They then write code until the tests pass and refactor it if necessary without breaking the existing test suite.
-In the Hotel Review System, this test-first method can be applied to the hotel ranking function. For instance, developers can write tests to verify that the system ranks hotels accurately based on their ratings. Additional test cases can cover scenarios where two hotels share the same rating or a hotel has no reviews yet.
-Writing tests beforehand ensures that each function behaves as expected and helps catch regressions when the code is modified later. Developers can run the suite immediately after making changes to pinpoint issues quickly without waiting for the entire system to be completed.
-
-iii) Continuous Integration (CI)
-This practice involves frequently merging code changes into a shared repository. Every submission is verified through automated builds and tests to detect integration issues at an early stage.
-In the Hotel Review System, group members can use a shared GitHub repository to store their codebase. Whenever a member pushes updates, the automated pipeline runs builds and tests to ensure the new changes do not disrupt other parts of the system.
-Automated builds and verification checks help detect compilation errors and integration conflicts early on. This minimizes the risk of discovering major issues only when all the code is combined at the end of development. Team members receive feedback as soon as their changes are merged and validated, rather than waiting until everyone has finished coding to see if everything works together.
