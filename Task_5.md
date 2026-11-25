@@ -24,8 +24,6 @@ Applying **Münch's 4 Ps** helps prevent heavyweight process overhead from scutt
 * **Mission-Critical & High Reliability:** Handles millions of daily financial authorizations where downtime directly impacts commerce; requires near-zero downtime (99.99%+ availability) and strict failover mechanisms (such as offline Secure TAC fallback when push notifications fail).
 * **Maximum Security & Long Lifespan:** Because financial loss and regulatory penalties are severe, the software process cannot be lightweight—it must enforce formal threat modeling, penetration testing, code audits, and strict release gates over a multi-year lifecycle.
 
-> **Key Takeaway:** Tailoring the development process for Maybank Secure2u around Münch's 4 Ps (**Problem**, **Project**, **People**, **Product**) reveals conflicting operational demands: extreme safety and regulatory accountability on one side, and rapidly evolving fraud threats on the other. Choosing either extreme—pure ad-hoc Agile or rigid, linear Waterfall—would risk project failure.
-
 ---
 
 ## 2. Why Extreme Process Models Fail for Secure2u
