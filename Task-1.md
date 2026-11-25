@@ -40,9 +40,14 @@ Active Notion share link: https://app.notion.com/p/SPEM-2-0-Method-Content-Libra
 # 1.2 RACI Responsibility Matrix - Maybank Secure2u
 | Engineering Deliverable | Business Analyst | Software Architect | Software Developer | Quality Assurance | DevSecOps Engineer |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| Software Requirements Specification | A/R | C | C | C | I |
+| Software Requirements Specification | A/R | C | C | C | C |
 | Architecture Design | C | A/R | C | I | C |
 | Secure2u Integration Design | C | A | R | C | R |
 | Implementation of Source Code | I | C | A/R | C | C |
-| Quality and Security Report | I | C | I | A/R | R |
+| Quality and Security Report | I | C | C | A/R | R |
 | Testing and Verification Report | C | I | C | A/R | C |
+## Guide on How to Read the RACI Chart
+- R stands for Responsible where specialized roles are assigned to complete the task of the deliverable\
+- A stands for Accountable where a role owns the final outcome of a deliverable and has final decision-making\
+- C stands for Consulted where input is needed before a task is finished or a decision is finalized\
+- I stands for Informed where roles are kept updated on progress, decision, or outcomes
