@@ -1,22 +1,14 @@
-Assignment context:
-
 1. Lean Waste and Remedies
 
 i) Waiting & Handoffs
-Case-specific example:
-The Process View and Development View could not be started until the Logical View was completed, because both relied on its classes and structure. The member working on the Process View was also waiting for the Logical View diagram to be finished before they could correct their own work. Meanwhile, the Sequence Diagram member had to ask to be informed whenever the UML changed, since each change affected the Sequence Diagram.
-Impact:
-Work that depended on the Logical View could not progress in parallel, which left less room to review and refine the dependent diagrams. Each UML change also required extra messages to keep the Sequence Diagram consistent.
-Remedy:
-Complete the Class Diagram first as a baseline, then start the dependent views from it. Once it is agreed, changes should be announced in the group chat before the dependent diagrams are updated.
+The Process View and Development View depend on the Logical View, which is represented by the Class Diagram. While the diagram was still in progress, they were unable to proceed with their tasks because they were waiting for the results.
+As a result, only the Logical View task was progressing during that period, while the members working on the dependent views were idle. This meant that the tasks could not be done at the same time, which reduced the time left to complete the remaining views and review and refine the diagrams.
+To reduce this waste, the member responsible for the Class Diagram can share partial drafts periodically via WhatsApp chat group or GitHub. The other members can then begin their work from the draft and refine their views as the diagram is updated without waiting for the final version. When the diagram changes, the member should announce changes in the group chat. This allows the group to reduce external handoff waiting.
 
 ii) Defects and Rework
-Case-specific example:
-During the review, the Sequence Diagram and Use Case Diagram did not match the Class Diagram. For example, viewReward() appeared in the Sequence Diagram but not in the Class Diagram, and method names differed between the diagrams, such as manageClass() and manageClasses().
-Impact:
-The inconsistencies made the design unclear and required the affected diagrams to be corrected, which added extra effort to the report.
-Remedy:
-Treat the Class Diagram as the single source of truth. Before finalising, check every method and actor in the Sequence and Use Case Diagrams against it, and update the written explanations at the same time.
+During the review, the Sequence Diagram and the Use Case Diagram did not match the Class Diagram. For example, the method viewReward() appeared in the Use Case Diagram and the Sequence Diagram but was missing from the Class Diagram. This happened because changes made to one diagram were overlooked by the other members, so the related diagrams were not updated.
+As a result, the diagrams were inconsistent with one another. This meant that members had to correct the affected diagrams, which added extra effort and reduced the time available for other tasks.
+To reduce this waste, the group can treat the Class Diagram as the main reference for all other diagrams. Before finalising, a member should check every method and actor in the other diagrams against it. Any change should be announced in the group chat and committed in the shared repository. This allows the group to detect inconsistencies early and reduce rework.
 
 iii) Defects and Rework
 Case-specific example:
