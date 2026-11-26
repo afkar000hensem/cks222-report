@@ -18,6 +18,7 @@ The analysis focuses on the group's actual workflow during discussions, diagram 
 ---
 ### 4.2) XP Engineering Practices
 Extreme Programming (XP) is an agile approach that focuses on producing clean code through short and disciplined development cycles (Beck, 2004). This section describes how the group can adopt three XP engineering practices, namely Pair Programming, Test-First Programming and Continuous Integration, to improve code quality and shorten feedback loops. As Assignment 1 focused on system architecture design rather than software implementation, these practices are proposed for the implementation stage of DyslexiLearn, using the Phonics Matching Activity as an example.
+
 **Pair Programming**
 
 Pair Programming involves two developers working together on the same programming task. One developer acts as the Driver, who writes the code, while the other acts as the Navigator, who reviews the code and provides suggestions.
