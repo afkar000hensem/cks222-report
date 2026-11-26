@@ -1,28 +1,36 @@
-1. Lean Waste and Remedies
+## 4. Lean Waste Auditing & Extreme Programming (XP) Practice Alignment
+### 4.1) Lean Waste Audit & Remedies
 
-i) Waiting & Handoffs
-The Process View and Development View depend on the Logical View, which is represented by the Class Diagram. While the diagram was still in progress, they were unable to proceed with their tasks because they were waiting for the results.
-As a result, only the Logical View task was progressing during that period, while the members working on the dependent views were idle. This meant that the tasks could not be done at the same time, which reduced the time left to complete the remaining views and review and refine the diagrams.
-To reduce this waste, the member responsible for the Class Diagram can share partial drafts periodically via WhatsApp chat group or GitHub. The other members can then begin their work from the draft and refine their views as the diagram is updated without waiting for the final version. When the diagram changes, the member should announce changes in the group chat. This allows the group to reduce external handoff waiting.
+The assignment analysed in this task is Assignment 1 from CKS221/CSE341 – Software Architecture and Design, which involved preparing a System Architecture Report for the group's proposed DyslexiLearn system.
 
-ii) Defects and Rework
-During the review, the Sequence Diagram and the Use Case Diagram did not match the Class Diagram. For example, the method viewReward() appeared in the Use Case Diagram and the Sequence Diagram but was missing from the Class Diagram. This happened because changes made to one diagram were overlooked by the other members, so the related diagrams were not updated.
-As a result, the diagrams were inconsistent with one another. This meant that members had to correct the affected diagrams, which added extra effort and reduced the time available for other tasks.
-To reduce this waste, the group can treat the Class Diagram as the main reference for all other diagrams. Before finalising, a member should check every method and actor in the other diagrams against it. Any change should be announced in the group chat and committed in the shared repository. This allows the group to detect inconsistencies early and reduce rework.
+The assignment required the group to design the system architecture using the 4+1 View Model, covering the Logical View, Process View, Development View, Physical View and Use Case View. It also required explanations of the architectural decisions and the proposed system's functionalities.
 
-iii) Defects and Rework
-Case-specific example:
-The rewards requirement in the assignment instructions was initially overlooked, as it was assumed to be unnecessary. The reward feature had even been removed from the Sequence Diagram and Use Case Diagram because it was missing from the Class Diagram. When the requirement was noticed, the group had to add viewReward() back and adjust the related diagrams.
-Impact:
-Diagrams that had already been completed had to be reopened, which increased the amount of rework.
-Remedy:
-Read the full instructions together at the start and list every required feature in a checklist, then tick each one off against the diagrams before submission.
+DyslexiLearn is a proposed web-based learning system designed to support children with dyslexia. Its proposed features include text-to-speech, audiobooks, phonics matching activities, basic learning activities and picture-based login for children, as well as account management for teachers.
 
-iv) Overprocessing
-Case-specific example:
-The instructions asked for one diagram per view, yet the group discussed whether to add a Data Flow Diagram, noting that other groups had drawn more than one. The Process View also ended up with two diagrams, which increased the page count and required adjustments to image sizes and layout.
-Impact:
-The extra diagram and the discussion took attention away from checking the required diagrams. The additional length also required formatting changes to keep the report within the page limit.
-Remedy:
-Decide the number of diagrams per view from the instructions before drawing anything, and add an extra diagram only if it covers something the required one cannot.
+The analysis focuses on the group's actual workflow during discussions, diagram development and report preparation. Since Assignment 1 focused on system architecture design rather than software implementation, the Lean Waste analysis examines how the group managed its assignment tasks rather than the performance of the proposed system.
 
+|**Lean Waste**|**Case Example**|**Impact**|**Remedy**|
+|---|---|---|---|
+|Waiting & Handoffs|The Process View and Development View depend on the Logical View, which is represented by the Class Diagram. While the diagram was still in progress, they were unable to proceed with their tasks because they were waiting for the results.|As a result, only the Logical View task was progressing during that period, while the members working on the dependent views were idle. This meant that the tasks could not be done at the same time, which reduced the time left to complete the remaining views and review and refine the diagrams.|The member responsible for the Class Diagram can share partial drafts periodically via WhatsApp chat group or GitHub. The other members can then begin their work from the draft and refine their views as the diagram is updated without waiting for the final version. When the diagram changes, the member should announce changes in the group chat. This allows the group to reduce external handoff waiting.|
+|Defects & Rework|During the review, the Sequence Diagram and the Use Case Diagram did not match the Class Diagram. For example, the method viewReward() appeared in the Use Case Diagram and the Sequence Diagram but was missing from the Class Diagram. This happened because changes made to one diagram were overlooked by the other members, so the related diagrams were not updated.|As a result, the diagrams were inconsistent with one another. This meant that members had to correct the affected diagrams, which added extra effort and reduced the time available for other tasks.|The group can treat the Class Diagram as the main reference for all other diagrams. Before finalising, a member should check every method and actor in the other diagrams against it. Any change should be announced in the group chat and committed in the shared repository. This allows the group to detect inconsistencies early and reduce rework.|
+|Defects & Rework|The rewards requirement in the assignment instructions was initially overlooked, as it was assumed to be unnecessary. The reward feature had even been removed from the Sequence Diagram and Use Case Diagram because it was missing from the Class Diagram. When the requirement was noticed, the group had to add viewReward() back and adjust the related diagrams.|Diagrams that had already been completed had to be reopened, which increased the amount of rework.|Read the full instructions together at the start and list every required feature in a checklist, then tick each one off against the diagrams before submission.|
+|Overprocessing|The instructions asked for one diagram per view, yet the group discussed whether to add a Data Flow Diagram, noting that other groups had drawn more than one. The Process View also ended up with two diagrams, which increased the page count and required adjustments to image sizes and layout.|The extra diagram and the discussion took attention away from checking the required diagrams. The additional length also required formatting changes to keep the report within the page limit.|Decide the number of diagrams per view from the instructions before drawing anything, and add an extra diagram only if it covers something the required one cannot.|
+---
+### 4.2) XP Engineering Practices
+**Pair Programming**
+
+Pair Programming involves two developers working together on the same programming task. One developer acts as the Driver, who writes the code, while the other acts as the Navigator, who reviews the code and provides suggestions.
+For the DyslexiLearn project, two group members can work together to develop the Phonics Matching Activity. For example, they can first discuss how the activity should work, such as how the system checks whether a child's selected answer matches the correct phonics. One member can implement the answer-checking function while the other reviews the logic to ensure that the system responds correctly to both matching and incorrect answers. They can then switch roles for another part of the activity.
+This practice helps identify mistakes early through code reviews. It also encourages knowledge sharing as members exchange ideas and coding techniques. In addition, it improves code quality because members can discuss and refine the implementation together, making the code more accurate and easier to maintain.
+
+**Test-First Programming**
+
+Test-First Programming is an approach where developers write test cases before implementing the actual code. These tests are used to check whether the code produces the expected results.
+For the DyslexiLearn project, group members can write test cases for the Phonics Matching Activity before developing it. For example, the tests can check whether the system correctly identifies matching and incorrect answers. They can also check whether the system displays the appropriate response for each answer.
+This practice helps identify errors early through testing. It also ensures that the implemented functionality meets the expected requirements. In addition, it improves code reliability because developers can check whether their code works as intended.
+
+**Continuous Integration**
+
+Continuous Integration (CI) is a practice where developers frequently combine their code changes into a shared repository. An automated process then builds the project and runs tests to check whether the integrated code works correctly.
+For the DyslexiLearn project, group members can regularly commit and push their code changes to a shared GitHub repository. For example, when a member completes the Phonics Matching Activity, the changes can be pushed to the repository. An automated workflow can then build the project and run tests to check whether the new changes affect other parts of the system.
+This practice helps identify integration problems early through automated testing. It also reduces conflicts between developers as code changes are integrated regularly. In addition, it shortens feedback loops because developers receive test results soon after pushing their changes.
