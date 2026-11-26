@@ -19,20 +19,20 @@ The analysis focuses on the group's actual workflow during discussions, diagram 
 ### 4.2) XP Engineering Practices
 Extreme Programming (XP) is an agile approach that focuses on producing clean code through short and disciplined development cycles. This section describes how the group can adopt three XP engineering practices, namely Pair Programming, Test-First Programming and Continuous Integration, to improve code quality and shorten feedback loops. As Assignment 1 focused on system architecture design rather than software implementation, these practices are proposed for the implementation stage of DyslexiLearn, using the Phonics Matching Activity as an example.
 
-**Pair Programming**
+**i) Pair Programming**
 
 Pair Programming involves two developers working together on the same programming task. One developer acts as the Driver, who writes the code, while the other acts as the Navigator, who reviews the code and provides suggestions.
 For the DyslexiLearn project, two group members can work together to develop the Phonics Matching Activity. For example, they can first discuss how the activity should work, such as how the system checks whether a child's selected answer matches the correct phonics. One member can implement the answer-checking function while the other reviews the logic to ensure that the system responds correctly to both matching and incorrect answers. They can then switch roles for another part of the activity.
 This practice helps identify mistakes early through code reviews. It also encourages knowledge sharing as members exchange ideas and coding techniques. In addition, it improves code quality because members can discuss and refine the implementation together, making the code more accurate and easier to maintain.
 
-**Test-First Programming**
+**ii) Test-First Programming**
 
 Test-First Programming is an approach where developers write test cases before implementing the actual code. These tests are used to check whether the code produces the expected results.
 For the DyslexiLearn project, group members can write test cases for the Phonics Matching Activity before developing it. For example, the tests can check whether the system correctly identifies matching and incorrect answers. They can also check whether the system displays the appropriate response for each answer.
 This practice helps identify errors early through testing. It also ensures that the implemented functionality meets the expected requirements. In addition, it improves code reliability because developers can check whether their code works as intended.
 
-**Continuous Integration**
+**iii) Continuous Integration**
 
-Continuous Integration (CI) is a practice where developers frequently combine their code changes into a shared repository. An automated process then builds the project and runs tests to check whether the integrated code works correctly.
+Continuous Integration is a practice where developers frequently combine their code changes into a shared repository. An automated process then builds the project and runs tests to check whether the integrated code works correctly.
 For the DyslexiLearn project, group members can regularly commit and push their code changes to a shared GitHub repository. For example, when a member completes the Phonics Matching Activity, the changes can be pushed to the repository. An automated workflow can then build the project and run tests to check whether the new changes affect other parts of the system.
 This practice helps identify integration problems early through automated testing. It also reduces conflicts between developers as code changes are integrated regularly. In addition, it shortens feedback loops because developers receive test results soon after pushing their changes.
