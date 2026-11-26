@@ -1,7 +1,7 @@
 ## 4. Lean Waste Auditing & Extreme Programming (XP) Practice Alignment
 ### 4.1) Lean Waste Audit & Remedies
 
-The assignment analysed in this task is Assignment 1 from CKS221/CSE341 – Software Architecture and Design, which involved preparing a System Architecture Report for the group's proposed DyslexiLearn system.
+The project analysed in this task is Assignment 1 from CKS221/CSE341 – Software Architecture and Design, which involved preparing a System Architecture Report for the group's proposed DyslexiLearn system.
 
 The assignment required the group to design the system architecture using the 4+1 View Model, covering the Logical View, Process View, Development View, Physical View and Use Case View. It also required explanations of the architectural decisions and the proposed system's functionalities.
 
